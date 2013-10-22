@@ -49,6 +49,8 @@ void *watch_count(void *t)
         count += 125;
         printf("watch_count(): thread %ld count now = %d.\n", my_id, count);        
     }
+    pthread_mutex_unlock(&count_mutex);
+    pthread_exit(NULL);
 }
 
 int main(int argc, char *argv[])
