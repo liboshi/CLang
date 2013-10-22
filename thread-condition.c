@@ -44,6 +44,10 @@ void *watch_count(void *t)
     pthread_mutex_lock(&count_mutex);
     while (count < COUNT_LIMIT)
     {
+        pthread_cond_wait(&count_threshold_cv, &count_mutex);
+        printf("watch_count(): thread %ld Condition signal received.\n", my_id);
+        count += 125;
+        printf("watch_count(): thread %ld count now = %d.\n", my_id, count);        
     }
 }
 
@@ -54,7 +58,7 @@ int main(int argc, char *argv[])
     pthread_t threads[3];
     pthread_attr_t attr;
 
-    pthread_mutex_init(&attr);
+    pthread_mutex_init(&count_mutex, NULL);
     pthread_cond_init(&count_threshold_cv, NULL);
 
     pthread_attr_init(&attr);
@@ -62,4 +66,15 @@ int main(int argc, char *argv[])
     pthread_create(&threads[0], &attr, watch_count, (void *)t1);
     pthread_create(&threads[1], &attr, inc_count, (void *)t1);
     pthread_create(&threads[2], &attr, inc_count, (void *)t1);
+
+    for (i = 0; i < NUM_THREADS; i++)
+    {
+        pthread_join(threads[i], NULL);
+    }
+
+    printf ("Main(): Waited on %d  threads. Done.\n", NUM_THREADS);
+    pthread_attr_destroy(&attr);
+    pthread_mutex_destroy(&count_mutex);
+    pthread_cond_destroy(&count_threshold_cv);
+    pthread_exit(NULL);
 }
