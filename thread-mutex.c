@@ -10,8 +10,6 @@ typedef struct
    int     veclen; 
  } DOTDATA;
 
-/* Define globally accessible variables and a mutex */
-
 #define NUMTHRDS 4
 #define VECLEN 100000
 DOTDATA dotstr; 
@@ -68,7 +66,6 @@ int main (int argc, char *argv[])
     
     pthread_mutex_init(&mutexsum, NULL);
     
-    /* Create threads to perform the dotproduct  */
     pthread_attr_init(&attr);
     pthread_attr_setdetachstate(&attr, PTHREAD_CREATE_JOINABLE);
     
@@ -78,13 +75,11 @@ int main (int argc, char *argv[])
     }
     
     pthread_attr_destroy(&attr);
-    /* Wait on the other threads */
     
     for(i = 0; i < NUMTHRDS; i++)
     {
         pthread_join(callThd[i], &status);
     }
-    /* After joining, print out the results and cleanup */
     
     printf ("Sum =  %f \n", dotstr.sum);
     free (a);
