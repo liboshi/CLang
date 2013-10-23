@@ -55,8 +55,8 @@ int main (int argc, char *argv[])
     
     for (i = 0; i < VECLEN*NUMTHRDS; i++)
     {
-        a[i]=1;
-        b[i]=a[i];
+        a[i] = 1;
+        b[i] = a[i];
     }
 
     dotstr.veclen = VECLEN; 
