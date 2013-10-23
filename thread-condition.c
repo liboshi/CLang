@@ -7,7 +7,7 @@
 
 #define NUM_THREADS 3
 #define TCOUNT 10
-#define COUNT_LIMIT 12
+#define COUNT_LIMIT 8
 
 int count = 0;
 int thread_ids[3] = {0, 1, 2};
@@ -66,8 +66,8 @@ int main(int argc, char *argv[])
     pthread_attr_init(&attr);
     pthread_attr_setdetachstate(&attr, PTHREAD_CREATE_JOINABLE);
     pthread_create(&threads[0], &attr, watch_count, (void *)t1);
-    pthread_create(&threads[1], &attr, inc_count, (void *)t1);
-    pthread_create(&threads[2], &attr, inc_count, (void *)t1);
+    pthread_create(&threads[1], &attr, inc_count, (void *)t2);
+    pthread_create(&threads[2], &attr, inc_count, (void *)t3);
 
     for (i = 0; i < NUM_THREADS; i++)
     {

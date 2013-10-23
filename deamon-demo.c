@@ -12,6 +12,7 @@ int main(int argc, char* argv[])
     FILE *fp = NULL;
     pid_t process_id = 0;
     pid_t sid = 0;
+    int count = 0;
     
     // Create child process
     process_id = fork();
@@ -44,9 +45,15 @@ int main(int argc, char* argv[])
     fp = fopen("Log.txt", "w+");
     while (1)
     {
+        count++;
         sleep(1);
-        fprintf(fp, ">>>Logging info...\n");
+        fprintf(fp, "=== Logging info...\n");
         fflush(fp);
+        if (25 == count)
+        {
+            printf("=== deamon process stop...\n");
+            exit(0);
+        }
     }
     fclose(fp);
     return 0;
