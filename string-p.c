@@ -44,11 +44,15 @@ int del_substr(char *str, char const *substr)
 
 int main(int argc, char *argv[])
 {
+        if (argc != 3)
+        {
+                printf("============ Usage ============\n./bouli \"liboshi\" \"bo\"\n");
+                exit(1);
+        }
         char *name = "liboshi";
         int len = strlen(name);
         printf("The length of string %s is: %d\n", name, len);
-        char *str = "liboshi";
-        char const *substr = "shi";
-        del_substr(str, substr);
-        printf("The string is: %s\n", str);
+        del_substr(argv[1], argv[2]);
+        printf("The string is: %s\n", argv[1]);
+        printf("Args number is: %d", argc);
 }
