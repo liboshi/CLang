@@ -1,6 +1,7 @@
 #include <stdio.h>
  
-int binary_search(int array[], int value, int size) {
+int binary_search(int array[], int value, int size)
+{
         int found = 0;
         int high = size, low = 0, mid;
         
