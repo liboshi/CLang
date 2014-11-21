@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
         for (int j = 0;;j++) {
                 if (buff[j] != '\0') {
                         printf("%c", buff[j]);
-                } else{
+                } else {
                         break;
                 }
         }
