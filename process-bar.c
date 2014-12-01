@@ -9,7 +9,7 @@ int main(int argc, char *argv[])
         for (int i = 0; i < len + 1; ++i) {
                 bar[i] = '#';
         }
-        for (int i = 0; i< len; ++i) {
+        for (int i = 0; i < len; ++i) {
                 printf("process:[%s]%d%\r", bar + len - i, i + 1);
                 fflush(stdout);
                 usleep(100000);
