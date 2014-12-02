@@ -86,6 +86,19 @@ int strchr_test()
         return 0;
 }
 
+int strcmp_test()
+{
+        char key[] = "apple";
+        char buffer[80];
+        do {
+                printf("Please guess my favorite fruit?\n");
+                fflush(stdout);
+                scanf("%79s", buffer);
+        } while (strcmp(key, buffer) != 0);
+        puts("Bingo...\n");
+        return 0;
+}
+
 int main()
 {
         int ret;
@@ -95,6 +108,7 @@ int main()
         //ret = memmove_test();
         //ret = memset_test();
         //ret = strcat_test();
-        ret = strchr_test();
+        //ret = strchr_test();
+        ret = strcmp_test();
         return ret;
 }
