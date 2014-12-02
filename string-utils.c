@@ -62,6 +62,17 @@ int memset_test()
         return 0;
 }
 
+int strcat_test()
+{
+        char str[80];
+        strcpy(str, "Thesse ");
+        strcat(str, "strings ");
+        strcat(str, "are ");
+        strcat(str, "concatenated...");
+        puts(str);
+        return 0;
+}
+
 int main()
 {
         int ret;
@@ -69,6 +80,7 @@ int main()
         //ret = memcmp_test();
         //ret = memcpy_test();
         //ret = memmove_test();
-        ret = memset_test();
+        //ret = memset_test();
+        ret = strcat_test();
         return ret;
 }
