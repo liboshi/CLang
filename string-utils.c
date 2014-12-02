@@ -12,7 +12,7 @@ int memchr_test()
         char str[] = "Example string";
         pch = (char *)memchr(str, 'p', strlen(str));
         if (pch != NULL) {
-                printf("'p' found at position: %d...\n", pch - str + 1);
+                printf("'p' found at position: %ld...\n", pch - str + 1);
         } else {
                 printf("'p' not found...\n");
         }
@@ -73,6 +73,19 @@ int strcat_test()
         return 0;
 }
 
+int strchr_test()
+{
+        char str[] = "My Name is Li Boush";
+        char *pch;
+        printf("Looking for the 'i' character in '%s'...\n", str);
+        pch = strchr(str, 'i');
+        while (pch != NULL) {
+                printf("Found at %ld\n", pch - str + 1);
+                pch = strchr(pch + 1, 'i');
+        }
+        return 0;
+}
+
 int main()
 {
         int ret;
@@ -81,6 +94,7 @@ int main()
         //ret = memcpy_test();
         //ret = memmove_test();
         //ret = memset_test();
-        ret = strcat_test();
+        //ret = strcat_test();
+        ret = strchr_test();
         return ret;
 }
