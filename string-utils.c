@@ -1,6 +1,11 @@
 #include <stdio.h>
 #include <string.h>
 
+struct {
+        char name[40];
+        int age;
+} person, person_copy;
+
 int memchr_test()
 {
         char *pch;
@@ -28,10 +33,33 @@ int memcmp_test()
         return 0;
 }
 
+int memcpy_test()
+{
+        char myname[] = "Boush Li";
+        memcpy(person.name, myname, strlen(myname) + 1);
+        person.age = 28;
+
+        memcpy(&person_copy, &person, sizeof(person));
+
+        printf("person_copy: %s, %d\n", person_copy.name, person_copy.age);
+
+        return 0;
+}
+
+int memmove_test()
+{
+        char str[] = "memmove can be very useful......";
+        memmove(str + 20, str + 15, 11);
+        puts(str);
+        return 0;
+}
+
 int main()
 {
         int ret;
         //ret = memchr_test();
-        ret = memcmp_test();
+        //ret = memcmp_test();
+        //ret = memcpy_test();
+        ret = memmove_test();
         return ret;
 }
