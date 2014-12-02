@@ -91,11 +91,11 @@ int strcmp_test()
         char key[] = "apple";
         char buffer[80];
         do {
-                printf("Please guess my favorite fruit?\n");
+                printf("Please guess my favorite fruit? -- ");
                 fflush(stdout);
                 scanf("%79s", buffer);
         } while (strcmp(key, buffer) != 0);
-        puts("Bingo...\n");
+        puts("Bingo...");
         return 0;
 }
 
