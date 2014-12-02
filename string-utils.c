@@ -54,12 +54,21 @@ int memmove_test()
         return 0;
 }
 
+int memset_test()
+{
+        char str[] = "xxx My Name is Li Boush...";
+        memset(str, '>', 3);
+        puts(str);
+        return 0;
+}
+
 int main()
 {
         int ret;
         //ret = memchr_test();
         //ret = memcmp_test();
         //ret = memcpy_test();
-        ret = memmove_test();
+        //ret = memmove_test();
+        ret = memset_test();
         return ret;
 }
