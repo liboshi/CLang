@@ -112,6 +112,16 @@ int strcpy_test()
         return 0;
 }
 
+int strcspn_test()
+{
+        char str[] = "abc123";
+        char keys[] = "0123456789";
+        int i;
+        i = strcspn(str, keys);
+        printf("The first number in str is at position %d.\n", i + 1);
+        return 0;
+}
+
 int main()
 {
         int ret;
@@ -123,6 +133,7 @@ int main()
         //ret = strcat_test();
         //ret = strchr_test();
         //ret = strcmp_test();
-        ret = strcpy_test();
+        //ret = strcpy_test();
+        ret = strcspn_test();
         return ret;
 }
