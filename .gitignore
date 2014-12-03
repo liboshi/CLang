@@ -1,4 +1,6 @@
 *.gitignore
 *.swp
 *.out
+*.o
+*.obj
 
