@@ -55,6 +55,7 @@
 #include <errno.h>
 #include <getopt.h>
 #include <ctype.h>
+#include <string.h>
 
 #define BITS_PER_LONG (sizeof(long) * 8)
 #define NBITS(x) ((((x)-1)/BITS_PER_LONG)+1)
@@ -684,6 +685,7 @@ static char* scan_devices(void)
 	struct dirent **namelist;
 	int i, ndev, devnum;
 	char *filename;
+	const char *kbd = "keyboard";
 
 	ndev = scandir(DEV_INPUT_EVENT, &namelist, is_event_device, versionsort);
 	if (ndev <= 0)
@@ -704,13 +706,14 @@ static char* scan_devices(void)
 			continue;
 		ioctl(fd, EVIOCGNAME(sizeof(name)), name);
 
-		fprintf(stderr, "%s:	%s\n", fname, name);
+		if (strstr(name, kbd) != NULL) {
+			fprintf(stderr, "%s:	%s\n", fname, name);
+			fprintf(stderr, "The device number:	%d\n", i);
+			devnum = i;
+		}
 		close(fd);
 		free(namelist[i]);
 	}
-
-	fprintf(stderr, "Select the device event number [0-%d]: ", ndev - 1);
-	scanf("%d", &devnum);
 
 	if (devnum >= ndev || devnum < 0)
 		return NULL;
@@ -897,17 +900,13 @@ static int print_events(int fd)
 			type = ev[i].type;
 			code = ev[i].code;
 
-			printf("Event: time %ld.%06ld, ", ev[i].time.tv_sec, ev[i].time.tv_usec);
-
 			if (type == EV_SYN) {
 				if (code == SYN_MT_REPORT)
-					printf("++++++++++++++ %s ++++++++++++\n", codename(type, code));
+					;
 				else
-					printf("-------------- %s ------------\n", codename(type, code));
+					;
 			} else {
-				printf("type %d (%s), code %d (%s), ",
-					type, typename(type),
-					code, codename(type, code));
+				printf("%s ", codename(type, code));
 				if (type == EV_MSC && (code == MSC_RAW || code == MSC_SCAN))
 					printf("value %02x\n", ev[i].value);
 				else
