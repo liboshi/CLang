@@ -910,7 +910,14 @@ static int print_events(int fd)
 				if (type == EV_MSC && (code == MSC_RAW || code == MSC_SCAN))
 					;
 				else if (ev[i].value == 1) {
-					fd_log = fopen("./input.log", "a");
+					fd_log = fopen("./press.log", "a");
+					fprintf(fd_log, "%s ", codename(type, code) + 4);
+					printf("%s", codename(type, code) + 4);
+					printf("\n");
+					fclose(fd_log);
+				}
+				else if (ev[i].value == 0) {
+					fd_log = fopen("./release.log", "a");
 					fprintf(fd_log, "%s ", codename(type, code) + 4);
 					printf("%s", codename(type, code) + 4);
 					printf("\n");
