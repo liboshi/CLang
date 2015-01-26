@@ -909,7 +909,7 @@ static int print_events(int fd)
 			} else {
 				if (type == EV_MSC && (code == MSC_RAW || code == MSC_SCAN))
 					;
-				else if (ev[i].value == 0) {
+				else if (ev[i].value == 1) {
 					fd_log = fopen("./input.log", "a");
 					fprintf(fd_log, "%s ", codename(type, code) + 4);
 					printf("%s", codename(type, code) + 4);
@@ -953,9 +953,6 @@ static int do_capture(const char *device)
 	char *filename = NULL;
 
 	if (!device) {
-		fprintf(stderr, "No device specified, trying to scan all of %s/%s*\n",
-			DEV_INPUT_EVENT, EVENT_DEV_NAME);
-
 		if (getuid() != 0)
 			fprintf(stderr, "Not running as root, no devices may be available.\n");
 
@@ -979,11 +976,6 @@ static int do_capture(const char *device)
 
 	if (!isatty(fileno(stdout)))
 		setbuf(stdout, NULL);
-
-	if (print_device_info(fd))
-		goto error;
-
-	printf("Testing ... (interrupt to exit)\n");
 
 	if (test_grab(fd))
 	{
