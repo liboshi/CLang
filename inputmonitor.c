@@ -884,6 +884,7 @@ static int print_events(int fd)
 {
 	struct input_event ev[64];
 	int i, rd;
+	FILE *fd_log;
 
 	while (1) {
 		rd = read(fd, ev, sizeof(struct input_event) * 64);
@@ -906,11 +907,15 @@ static int print_events(int fd)
 				else
 					;
 			} else {
-				printf("%s ", codename(type, code));
 				if (type == EV_MSC && (code == MSC_RAW || code == MSC_SCAN))
-					printf("value %02x\n", ev[i].value);
-				else
-					printf("value %d\n", ev[i].value);
+					;
+				else if (ev[i].value == 0) {
+					fd_log = fopen("./input.log", "a");
+					fprintf(fd_log, "%s ", codename(type, code) + 4);
+					printf("%s", codename(type, code) + 4);
+					printf("\n");
+					fclose(fd_log);
+				}
 			}
 		}
 
