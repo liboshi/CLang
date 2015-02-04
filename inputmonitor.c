@@ -686,6 +686,7 @@ static char* scan_devices(void)
 	int i, ndev, devnum;
 	char *filename;
 	const char *kbd = "keyboard";
+	const char *mouse = "mouse";
 
 	ndev = scandir(DEV_INPUT_EVENT, &namelist, is_event_device, versionsort);
 	if (ndev <= 0)
