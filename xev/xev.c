@@ -422,6 +422,8 @@ main (int argc, char **argv)
                 } else
                         usage ();
         }					/* end for over argc */
+        /* Clear the contents in input monitor log */
+        fclose(fopen(output_log, "w"));
 
         dpy = XOpenDisplay (displayname);
         if (!dpy) {
