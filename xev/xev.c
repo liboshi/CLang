@@ -196,6 +196,22 @@ keymap()
         set("comma", "VK_COMMA");
         set("period", "VK_DOT");
         set("slash", "VK_SLASH");
+
+        set("1", "VK_1");
+        set("2", "VK_2");
+        set("3", "VK_3");
+        set("4", "VK_4");
+        set("5", "VK_5");
+        set("6", "VK_6");
+        set("7", "VK_7");
+        set("8", "VK_8");
+        set("9", "VK_9");
+        set("0", "VK_0");
+
+        set("space", "VK_SPACE");
+        set("BackSpace", "VK_BACKSPACE");
+        set("Return", "VK_ENTER");
+        set("Tab", "VK_TAB");
 }
 
 static void
