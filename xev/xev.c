@@ -184,6 +184,18 @@ keymap()
         set("Y", "VK_Y");
         set("z", "VK_Z");
         set("Z", "VK_Z");
+
+        set("grave", "VK_TILDE");
+        set("minus", "VK_MINUS");
+        set("equal", "VK_EQUAL");
+        set("bracketleft", "VK_OPEN_BRACKET");
+        set("bracketright", "VK_CLOSE_BRACKET");
+        set("backslash", "VK_BACKSLASH");
+        set("semicolon", "VK_SEMICOLON");
+        set("apostrophe", "VK_APOSTROPHE");
+        set("comma", "VK_COMMA");
+        set("period", "VK_DOT");
+        set("slash", "VK_SLASH");
 }
 
 static void
