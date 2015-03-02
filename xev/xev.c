@@ -30,6 +30,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <ctype.h>
 #include <X11/Xlocale.h>
 #include <X11/Xos.h>
@@ -77,6 +78,113 @@ Bool have_rr;
 int rr_event_base, rr_error_base;
 
 static void usage (void) _X_NORETURN;
+
+struct nlist { /* table entry: */
+        struct nlist *next; /* next entry in chain */
+        char *name; /* defined name */
+        char *defn; /* replacement text */
+};
+
+#define HASHSIZE 101
+static struct nlist *hashtab[HASHSIZE]; /* pointer table */
+
+/* hash: form hash value for string s */
+unsigned hash(char *s)
+{
+        unsigned hashval;
+        for (hashval = 0; *s != '\0'; s++)
+                hashval = *s + 31 * hashval;
+        return hashval % HASHSIZE;
+}
+
+/* lookup: look for s in hashtab */
+struct nlist *lookup(char *s)
+{
+        struct nlist *np;
+        for (np = hashtab[hash(s)]; np != NULL; np = np->next)
+                if (strcmp(s, np->name) == 0)
+                        return np; /* found */
+        return NULL; /* not found */
+}
+
+/* set: put (name, defn) in hashtab */
+struct nlist *set(const char *name, const char *defn)
+{
+        struct nlist *np;
+        unsigned hashval;
+        if ((np = lookup(name)) == NULL) { /* not found */
+                np = (struct nlist *) malloc(sizeof(*np));
+                if (np == NULL || (np->name = strdup(name)) == NULL)
+                        return NULL;
+                hashval = hash(name);
+                np->next = hashtab[hashval];
+                hashtab[hashval] = np;
+        } else /* already there */
+                free((void *) np->defn); /*free previous defn */
+        if ((np->defn = strdup(defn)) == NULL)
+                return NULL;
+        return np;
+}
+
+static void
+keymap()
+{
+        /*
+         * CHaracter keys
+         */
+        set("a", "VK_A");
+        set("A", "VK_A");
+        set("b", "VK_B");
+        set("B", "VK_B");
+        set("c", "VK_C");
+        set("C", "VK_C");
+        set("d", "VK_D");
+        set("D", "VK_D");
+        set("e", "VK_E");
+        set("E", "VK_E");
+        set("f", "VK_F");
+        set("F", "VK_F");
+        set("g", "VK_G");
+        set("G", "VK_G");
+        set("h", "VK_H");
+        set("H", "VK_H");
+        set("i", "VK_I");
+        set("I", "VK_I");
+        set("j", "VK_J");
+        set("J", "VK_J");
+        set("k", "VK_K");
+        set("K", "VK_K");
+        set("l", "VK_L");
+        set("L", "VK_L");
+        set("m", "VK_M");
+        set("M", "VK_M");
+        set("n", "VK_N");
+        set("N", "VK_N");
+        set("o", "VK_O");
+        set("O", "VK_O");
+        set("p", "VK_P");
+        set("P", "VK_P");
+        set("q", "VK_Q");
+        set("Q", "VK_Q");
+        set("r", "VK_R");
+        set("R", "VK_R");
+        set("s", "VK_S");
+        set("S", "VK_S");
+        set("t", "VK_T");
+        set("T", "VK_T");
+        set("u", "VK_U");
+        set("U", "VK_U");
+        set("v", "VK_V");
+        set("V", "VK_V");
+        set("w", "VK_W");
+        set("W", "VK_W");
+        set("x", "VK_X");
+        set("X", "VK_X");
+        set("y", "VK_Y");
+        set("Y", "VK_Y");
+        set("z", "VK_Z");
+        set("Z", "VK_Z");
+}
 
 static void
 dump (char *str, int len)
@@ -348,6 +456,8 @@ main (int argc, char **argv)
         XIMStyle xim_style = 0;
         char *modifiers;
         char *imvalret;
+
+        keymap();
 
         ProgramName = argv[0];
 
