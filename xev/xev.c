@@ -547,26 +547,7 @@ set_sizehints (XSizeHints *hintp, int min_width, int min_height,
 static void
 usage (void)
 {
-        static const char *msg[] = {
-                "    -display displayname                X server to contact",
-                "    -geometry geom                      size and location of window",
-                "    -bw pixels                          border width in pixels",
-                "    -bs {NotUseful,WhenMapped,Always}   backingstore attribute",
-                "    -id windowid                        use existing window",
-                "    -root                               use root window",
-                "    -s                                  set save-unders attribute",
-                "    -name string                        window name",
-                "    -rv                                 reverse video",
-                "",
-                NULL};
-        const char **cpp;
-
-        fprintf (stderr, "usage:  %s [-options ...]\n", ProgramName);
-        fprintf (stderr, "where options include:\n");
-
-        for (cpp = msg; *cpp; cpp++)
-                fprintf (stderr, "%s\n", *cpp);
-
+        fprintf (stderr, "Usage:  %s [path for result log]\n", ProgramName);
         exit (1);
 }
 
@@ -639,71 +620,13 @@ main (int argc, char **argv)
         }
 
         w = 0;
-        for (i = 1; i < argc; i++) {
-                char *arg = argv[i];
-                if (i == 1) {
-                        output_log = argv[i];
-                        continue;
-                }
-
-                if (arg[0] == '-') {
-                        switch (arg[1]) {
-                                case 'd':			/* -display host:dpy */
-                                        if (++i >= argc) usage ();
-                                        displayname = argv[i];
-                                        continue;
-                                case 'g':			/* -geometry geom */
-                                        if (++i >= argc) usage ();
-                                        geom = argv[i];
-                                        continue;
-                                case 'b':
-                                        switch (arg[2]) {
-                                                case 'w':		/* -bw pixels */
-                                                        if (++i >= argc) usage ();
-                                                        borderwidth = atoi (argv[i]);
-                                                        continue;
-                                                case 's':		/* -bs type */
-                                                        if (++i >= argc) usage ();
-                                                        attr.backing_store = parse_backing_store (argv[i]);
-                                                        mask |= CWBackingStore;
-                                                        continue;
-                                                default:
-                                                        usage ();
-                                        }
-                                case 'i':			/* -id */
-                                        if (++i >= argc) usage ();
-                                        sscanf(argv[i], "0x%lx", &w);
-                                        if (!w)
-                                                sscanf(argv[i], "%lu", &w);
-                                        if (!w)
-                                                usage ();
-                                        continue;
-                                case 'n':			/* -name */
-                                        if (++i >= argc) usage ();
-                                        name = argv[i];
-                                        continue;
-                                case 'r':
-                                        switch (arg[2]) {
-                                                case 'o':		/* -root */
-                                                        use_root = True;
-                                                        continue;
-                                                case 'v':		/* -rv */
-                                                        reverse = True;
-                                                        continue;
-                                                default:
-                                                        usage ();
-                                        }
-                                        continue;
-                                case 's':			/* -s */
-                                        attr.save_under = True;
-                                        mask |= CWSaveUnder;
-                                        continue;
-                                default:
-                                        usage ();
-                        }				/* end switch on - */
-                } else
+        if (argc == 2) {
+                if ((strcmp(argv[1], "--help") == 0) || (strcmp(argv[1], "-h") == 0)) {
                         usage ();
-        }					/* end for over argc */
+                } else {
+                        output_log = argv[1];
+                }
+        }
 
         /* Clear the contents in input monitor log */
         fclose(fopen(output_log, "w"));
