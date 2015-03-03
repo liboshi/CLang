@@ -57,7 +57,7 @@
 #define DEBUG 0
 
 int RELEASE = 0;
-char *output_log = "/tmp/inputResult.log";
+const char *output_log = "/tmp/inputResult.log";
 
 typedef unsigned long Pixel;
 
@@ -89,7 +89,8 @@ struct nlist { /* table entry: */
 static struct nlist *hashtab[HASHSIZE]; /* pointer table */
 
 /* hash: form hash value for string s */
-unsigned hash(const char *s)
+static unsigned
+hash(const char *s)
 {
         unsigned hashval;
         for (hashval = 0; *s != '\0'; s++)
@@ -98,7 +99,7 @@ unsigned hash(const char *s)
 }
 
 /* lookup: look for s in hashtab */
-struct nlist *lookup(const char *s)
+struct nlista *lookup(const char *s)
 {
         struct nlist *np;
         for (np = hashtab[hash(s)]; np != NULL; np = np->next)
@@ -342,6 +343,7 @@ do_KeyPress (XEvent *eventp)
         KeyCode kc = 0;
         Bool kc_set = False;
         const char *ksname;
+        struct nlist *vkey;
         int nbytes, nmbbytes = 0;
         char str[256+1];
         static char *buf = NULL;
@@ -379,12 +381,19 @@ do_KeyPress (XEvent *eventp)
 
         if (RELEASE == 1) {
                 fd_log = fopen(output_log, "a");
-                if (strcmp(ksname, str_skip) != 0)
-                        fprintf(fd_log, "%s ", lookup(ksname)->defn);
+                vkey = lookup(ksname);
+                if (strcmp(ksname, str_skip) != 0) {
+                        if (vkey != NULL) {
+                                fprintf (fd_log, "%s ", vkey->defn);
+                                printf ("%s ", vkey->defn);
+                        } else {
+                                fprintf (fd_log, "%s ", ksname);
+                                printf ("%s ", ksname);
+                        }
+                }
                 fclose(fd_log);
         }
         RELEASE = 0;
-        printf ("%s ", lookup(ksname)->defn);
         if (kc_set && e->keycode != kc)
                 ;
         if (nbytes < 0) nbytes = 0;
@@ -559,6 +568,7 @@ parse_backing_store (char *s)
         usage ();
 }
 
+static int
 keep_window_always_top(Display *dpy, Window w)
 {
         Atom stateAbove;
@@ -570,7 +580,7 @@ keep_window_always_top(Display *dpy, Window w)
                                 PropModeReplace, (unsigned char *) &stateAbove,
                                 1);
         }
-        return ;
+        return 0;
 }
 
 int
