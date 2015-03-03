@@ -309,6 +309,19 @@ keymap()
         set("Caps_Lock",   "CapsLock");
         set("Scroll_Lock", "ScrollLock");
         set("Num_Lock",    "NumLock");
+
+        /*
+         * Japanese keys
+         */
+
+        set("Ro",                "RO");
+        set("Hiragana_Katakana", "Katakana/Hiragana");
+        set("Yen",               "Yen");
+        set("Henkan_Mode",       "Henkan");
+        set("Muhenkan",          "Muhenkan");
+        set("Katakana",          "Katakana");
+        set("Hiragana",          "Hiragana");
+        set("Hankaku_Zenkaku",   "Zenkaku/Hankaku");
 }
 
 static void
@@ -583,6 +596,9 @@ main (int argc, char **argv)
         char *modifiers;
         char *imvalret;
 
+        /*
+         * Store the keymap to a hash table.
+         */
         keymap();
 
         ProgramName = argv[0];
@@ -658,6 +674,7 @@ main (int argc, char **argv)
                 } else
                         usage ();
         }					/* end for over argc */
+
         /* Clear the contents in input monitor log */
         fclose(fopen(output_log, "w"));
 
