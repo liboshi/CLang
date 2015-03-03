@@ -89,7 +89,7 @@ struct nlist { /* table entry: */
 static struct nlist *hashtab[HASHSIZE]; /* pointer table */
 
 /* hash: form hash value for string s */
-unsigned hash(char *s)
+unsigned hash(const char *s)
 {
         unsigned hashval;
         for (hashval = 0; *s != '\0'; s++)
@@ -98,7 +98,7 @@ unsigned hash(char *s)
 }
 
 /* lookup: look for s in hashtab */
-struct nlist *lookup(char *s)
+struct nlist *lookup(const char *s)
 {
         struct nlist *np;
         for (np = hashtab[hash(s)]; np != NULL; np = np->next)
@@ -335,6 +335,7 @@ do_KeyPress (XEvent *eventp)
         static int bsize = 8;
         Status status;
         FILE *fd_log;
+        static char *str_skip = "Pause";
 
         if (buf == NULL)
                 buf = malloc (bsize);
@@ -363,15 +364,14 @@ do_KeyPress (XEvent *eventp)
                 kc_set = True;
         }
 
-
         if (RELEASE == 1) {
                 fd_log = fopen(output_log, "a");
-                fprintf(fd_log, "%s ", lookup(ksname)->defn);
+                if (strcmp(ksname, str_skip) != 0)
+                        fprintf(fd_log, "%s ", lookup(ksname)->defn);
                 fclose(fd_log);
         }
         RELEASE = 0;
-        //printf("%s ", lookup(ksname)->defn);
-        printf ("%s ", ksname);
+        printf ("%s ", lookup(ksname)->defn);
         if (kc_set && e->keycode != kc)
                 ;
         if (nbytes < 0) nbytes = 0;
