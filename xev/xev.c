@@ -40,8 +40,8 @@
 #include <X11/Xproto.h>
 #include <X11/extensions/Xrandr.h>
 
-#define INNER_WINDOW_WIDTH 200
-#define INNER_WINDOW_HEIGHT 100
+#define INNER_WINDOW_WIDTH 640
+#define INNER_WINDOW_HEIGHT 480
 #define INNER_WINDOW_BORDER 4
 #define INNER_WINDOW_X 0
 #define INNER_WINDOW_Y 0
@@ -729,6 +729,9 @@ main (int argc, char **argv)
                 XSetWMProtocols(dpy, w, &wm_delete_window, 1);
 
                 XMapWindow (dpy, w);
+                /* Move the pointer into the window */
+                XWarpPointer (dpy, screen, w, 0, 0, 320, 240, 320, 240);
+                /* Grab keyboard events */
         }
 
         if (xim && xim_style) {
