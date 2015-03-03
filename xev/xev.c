@@ -212,6 +212,82 @@ keymap()
         set("BackSpace", "VK_BACKSPACE");
         set("Return", "VK_ENTER");
         set("Tab", "VK_TAB");
+
+        set("KP_1", "VK_NUMPAD1");
+        set("KP_2", "VK_NUMPAD2");
+        set("KP_3", "VK_NUMPAD3");
+        set("KP_4", "VK_NUMPAD4");
+        set("KP_5", "VK_NUMPAD5");
+        set("KP_6", "VK_NUMPAD6");
+        set("KP_7", "VK_NUMPAD7");
+        set("KP_8", "VK_NUMPAD8");
+        set("KP_9", "VK_NUMPAD9");
+        set("KP_0", "VK_NUMPAD0");
+
+        set("KP_Enter", "VK_ENTER_NUMPAD");
+        set("KP_Decimal", "VK_DECIMAL");
+        set("KP_Add", "VK_ADD");
+        set("KP_Subtract", "VK_SUBTRACT");
+        set("KP_Multiply", "VK_MULTIPLY");
+        set("KP_Divide", "VK_DIVIDE");
+
+        /*
+         * Modifier keys
+         */
+
+        set("Control_L", "VK_LCONTROL");
+        set("Control_R", "VK_RCONTROL");
+        set("Shift_L", "VK_LSHIFT");
+        set("Shift_R", "VK_RSHIFT");
+        set("Alt_L", "VK_LALT");
+        set("Alt_R", "VK_RALT");
+        /* set("xxx", "SC_Fn"); */
+
+        /*
+         * Function keys
+         */
+
+        set("F1", "VK_F1");
+        set("F2", "VK_F2");
+        set("F3", "VK_F3");
+        set("F4", "VK_F4");
+        set("F5", "VK_F5");
+        set("F6", "VK_F6");
+        set("F7", "VK_F7");
+        set("F8", "VK_F8");
+        set("F9", "VK_F9");
+        set("F10", "VK_F10");
+        set("F11", "VK_F11");
+        set("F12", "VK_F12");
+
+        /*
+         * Movement keys
+         */
+
+        set("Home", "VK_HOME");
+        set("End", "VK_END");
+        set("Up", "VK_UP");
+        set("Down", "VK_DOWN");
+        set("Left", "VK_LEFT");
+        set("Right", "VK_RIGHT");
+        set("Prior", "VK_PRIOR");
+        set("Next", "VK_NEXT");
+        set("KP_Home", "VK_HOME_NUMPAD");
+        set("KP_End", "VK_END_NUMPAD");
+        set("KP_Up", "VK_UP_NUMPAD");
+        set("KP_Down", "VK_DOWN_NUMPAD");
+        set("KP_Left", "VK_LEFT_NUMPAD");
+        set("KP_Right", "VK_RIGHT_NUMPAD");
+        set("KP_Prior", "VK_PRIOR_NUMPAD");
+        set("KP_Next", "VK_NEXT_NUMPAD");
+        set("KP_Delete", "VK_CLEAR_NUMPAD");
+
+        /*
+         * System keys
+         */
+
+        set("Super_L", "VK_LWIN");
+        set("Super_R", "VK_RWIN");
 }
 
 static void
@@ -269,11 +345,12 @@ do_KeyPress (XEvent *eventp)
 
         if (RELEASE == 1) {
                 fd_log = fopen(output_log, "a");
-                fprintf(fd_log, "%s ", ksname);
+                fprintf(fd_log, "%s ", lookup(ksname)->defn);
                 fclose(fd_log);
         }
         RELEASE = 0;
-        printf ("%s ", ksname);
+        printf("%s ", lookup(ksname)->defn);
+        //printf ("%s ", ksname);
         if (kc_set && e->keycode != kc)
                 ;
         if (nbytes < 0) nbytes = 0;
