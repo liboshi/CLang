@@ -132,162 +132,183 @@ keymap()
         /*
          * CHaracter keys
          */
-        set("a", "VK_A");
-        set("A", "VK_A");
-        set("b", "VK_B");
-        set("B", "VK_B");
-        set("c", "VK_C");
-        set("C", "VK_C");
-        set("d", "VK_D");
-        set("D", "VK_D");
-        set("e", "VK_E");
-        set("E", "VK_E");
-        set("f", "VK_F");
-        set("F", "VK_F");
-        set("g", "VK_G");
-        set("G", "VK_G");
-        set("h", "VK_H");
-        set("H", "VK_H");
-        set("i", "VK_I");
-        set("I", "VK_I");
-        set("j", "VK_J");
-        set("J", "VK_J");
-        set("k", "VK_K");
-        set("K", "VK_K");
-        set("l", "VK_L");
-        set("L", "VK_L");
-        set("m", "VK_M");
-        set("M", "VK_M");
-        set("n", "VK_N");
-        set("N", "VK_N");
-        set("o", "VK_O");
-        set("O", "VK_O");
-        set("p", "VK_P");
-        set("P", "VK_P");
-        set("q", "VK_Q");
-        set("Q", "VK_Q");
-        set("r", "VK_R");
-        set("R", "VK_R");
-        set("s", "VK_S");
-        set("S", "VK_S");
-        set("t", "VK_T");
-        set("T", "VK_T");
-        set("u", "VK_U");
-        set("U", "VK_U");
-        set("v", "VK_V");
-        set("V", "VK_V");
-        set("w", "VK_W");
-        set("W", "VK_W");
-        set("x", "VK_X");
-        set("X", "VK_X");
-        set("y", "VK_Y");
-        set("Y", "VK_Y");
-        set("z", "VK_Z");
-        set("Z", "VK_Z");
+        set("a", "A");
+        set("A", "A");
+        set("b", "B");
+        set("B", "B");
+        set("c", "C");
+        set("C", "C");
+        set("d", "D");
+        set("D", "D");
+        set("e", "E");
+        set("E", "E");
+        set("f", "F");
+        set("F", "F");
+        set("g", "G");
+        set("G", "G");
+        set("h", "H");
+        set("H", "H");
+        set("i", "I");
+        set("I", "I");
+        set("j", "J");
+        set("J", "J");
+        set("k", "K");
+        set("K", "K");
+        set("l", "L");
+        set("L", "L");
+        set("m", "M");
+        set("M", "M");
+        set("n", "N");
+        set("N", "N");
+        set("o", "O");
+        set("O", "O");
+        set("p", "P");
+        set("P", "P");
+        set("q", "Q");
+        set("Q", "Q");
+        set("r", "R");
+        set("R", "R");
+        set("s", "S");
+        set("S", "S");
+        set("t", "T");
+        set("T", "T");
+        set("u", "U");
+        set("U", "U");
+        set("v", "V");
+        set("V", "V");
+        set("w", "W");
+        set("W", "W");
+        set("x", "X");
+        set("X", "X");
+        set("y", "Y");
+        set("Y", "Y");
+        set("z", "Z");
+        set("Z", "Z");
 
-        set("grave", "VK_TILDE");
-        set("minus", "VK_MINUS");
-        set("equal", "VK_EQUAL");
-        set("bracketleft", "VK_OPEN_BRACKET");
-        set("bracketright", "VK_CLOSE_BRACKET");
-        set("backslash", "VK_BACKSLASH");
-        set("semicolon", "VK_SEMICOLON");
-        set("apostrophe", "VK_APOSTROPHE");
-        set("comma", "VK_COMMA");
-        set("period", "VK_DOT");
-        set("slash", "VK_SLASH");
+        set("grave",        "TILDE");
+        set("minus",        "MINUS");
+        set("equal",        "EQUAL");
+        set("bracketleft",  "OPEN_BRACKET");
+        set("bracketright", "CLOSE_BRACKET");
+        set("backslash",    "BACKSLASH");
+        set("semicolon",    "SEMICOLON");
+        set("apostrophe",   "APOSTROPHE");
+        set("comma",        "COMMA");
+        set("period",       "DOT");
+        set("slash",        "SLASH");
 
-        set("1", "VK_1");
-        set("2", "VK_2");
-        set("3", "VK_3");
-        set("4", "VK_4");
-        set("5", "VK_5");
-        set("6", "VK_6");
-        set("7", "VK_7");
-        set("8", "VK_8");
-        set("9", "VK_9");
-        set("0", "VK_0");
+        set("1", "1");
+        set("2", "2");
+        set("3", "3");
+        set("4", "4");
+        set("5", "5");
+        set("6", "6");
+        set("7", "7");
+        set("8", "8");
+        set("9", "9");
+        set("0", "0");
 
-        set("space", "VK_SPACE");
-        set("BackSpace", "VK_BACKSPACE");
-        set("Return", "VK_ENTER");
-        set("Tab", "VK_TAB");
+        set("space",     "SPACE");
+        set("BackSpace", "BACKSPACE");
+        set("Return",    "ENTER");
+        set("Tab",       "TAB");
 
-        set("KP_1", "VK_NUMPAD1");
-        set("KP_2", "VK_NUMPAD2");
-        set("KP_3", "VK_NUMPAD3");
-        set("KP_4", "VK_NUMPAD4");
-        set("KP_5", "VK_NUMPAD5");
-        set("KP_6", "VK_NUMPAD6");
-        set("KP_7", "VK_NUMPAD7");
-        set("KP_8", "VK_NUMPAD8");
-        set("KP_9", "VK_NUMPAD9");
-        set("KP_0", "VK_NUMPAD0");
+        set("KP_1", "NUMPAD_1");
+        set("KP_2", "NUMPAD_2");
+        set("KP_3", "NUMPAD_3");
+        set("KP_4", "NUMPAD_4");
+        set("KP_5", "NUMPAD_5");
+        set("KP_6", "NUMPAD_6");
+        set("KP_7", "NUMPAD_7");
+        set("KP_8", "NUMPAD_8");
+        set("KP_9", "NUMPAD_9");
+        set("KP_0", "NUMPAD_0");
 
-        set("KP_Enter", "VK_ENTER_NUMPAD");
-        set("KP_Decimal", "VK_DECIMAL");
-        set("KP_Add", "VK_ADD");
-        set("KP_Subtract", "VK_SUBTRACT");
-        set("KP_Multiply", "VK_MULTIPLY");
-        set("KP_Divide", "VK_DIVIDE");
+        set("KP_Enter",    "NUMPAD_ENTER");
+        set("KP_Decimal",  "NUMPAD_DOT");
+        set("KP_Add",      "NUMPAD_ADD");
+        set("KP_Subtract", "NUMPAD_SUB");
+        set("KP_Multiply", "NUMPAD_MUL");
+        set("KP_Divide",   "NUMPAD_DIV");
 
         /*
          * Modifier keys
          */
 
-        set("Control_L", "VK_LCONTROL");
-        set("Control_R", "VK_RCONTROL");
-        set("Shift_L", "VK_LSHIFT");
-        set("Shift_R", "VK_RSHIFT");
-        set("Alt_L", "VK_LALT");
-        set("Alt_R", "VK_RALT");
+        set("Control_L", "LCTRL");
+        set("Control_R", "RCTRL");
+        set("Shift_L",   "LSHIFT");
+        set("Shift_R",   "RSHIFT");
+        set("Alt_L",     "LALT");
+        set("Alt_R",     "RALT");
         /* set("xxx", "SC_Fn"); */
 
         /*
          * Function keys
          */
 
-        set("F1", "VK_F1");
-        set("F2", "VK_F2");
-        set("F3", "VK_F3");
-        set("F4", "VK_F4");
-        set("F5", "VK_F5");
-        set("F6", "VK_F6");
-        set("F7", "VK_F7");
-        set("F8", "VK_F8");
-        set("F9", "VK_F9");
-        set("F10", "VK_F10");
-        set("F11", "VK_F11");
-        set("F12", "VK_F12");
+        set("F1",  "F1");
+        set("F2",  "F2");
+        set("F3",  "F3");
+        set("F4",  "F4");
+        set("F5",  "F5");
+        set("F6",  "F6");
+        set("F7",  "F7");
+        set("F8",  "F8");
+        set("F9",  "F9");
+        set("F10", "F10");
+        set("F11", "F11");
+        set("F12", "F12");
 
         /*
          * Movement keys
          */
 
-        set("Home", "VK_HOME");
-        set("End", "VK_END");
-        set("Up", "VK_UP");
-        set("Down", "VK_DOWN");
-        set("Left", "VK_LEFT");
-        set("Right", "VK_RIGHT");
-        set("Prior", "VK_PRIOR");
-        set("Next", "VK_NEXT");
-        set("KP_Home", "VK_HOME_NUMPAD");
-        set("KP_End", "VK_END_NUMPAD");
-        set("KP_Up", "VK_UP_NUMPAD");
-        set("KP_Down", "VK_DOWN_NUMPAD");
-        set("KP_Left", "VK_LEFT_NUMPAD");
-        set("KP_Right", "VK_RIGHT_NUMPAD");
-        set("KP_Prior", "VK_PRIOR_NUMPAD");
-        set("KP_Next", "VK_NEXT_NUMPAD");
-        set("KP_Delete", "VK_CLEAR_NUMPAD");
+        set("Home",      "HOME");
+        set("End",       "END");
+        set("Up",        "UP");
+        set("Down",      "DOWN");
+        set("Left",      "LEFT");
+        set("Right",     "RIGHT");
+        set("Prior",     "PgUp");
+        set("Next",      "PgDn");
+        set("KP_Home",   "HOME_NUMPAD");
+        set("KP_End",    "END_NUMPAD");
+        set("KP_Up",     "UP_NUMPAD");
+        set("KP_Down",   "DOWN_NUMPAD");
+        set("KP_Left",   "LEFT_NUMPAD");
+        set("KP_Right",  "RIGHT_NUMPAD");
+        set("KP_Prior",  "PgUp_NUMPAD");
+        set("KP_Next",   "PgDn_NUMPAD");
+        set("KP_Delete", "CLEAR_NUMPAD");
 
         /*
          * System keys
          */
 
-        set("Super_L", "VK_LWIN");
-        set("Super_R", "VK_RWIN");
+        set("Super_L", "LeftWin");
+        set("Super_R", "RightWin");
+        set("Menu",    "Menu");
+
+        /*
+         * Other keys
+         */
+
+        set("Insert",    "INSERT");
+        set("Delete",    "DELETE");
+        set("KP_Insert", "INSERT_NUMPAD");
+        set("KP_Delete", "DELETE_NUMPAD");
+        set("Escape",    "ESC");
+        set("Print",     "PrintScreen");
+        set("Pause",     "Pause");
+
+        /*
+         * xxx_Lock keys
+         */
+
+        set("Caps_Lock",   "CapsLock");
+        set("Scroll_Lock", "ScrollLock");
+        set("Num_Lock",    "NumLock");
 }
 
 static void
@@ -349,8 +370,8 @@ do_KeyPress (XEvent *eventp)
                 fclose(fd_log);
         }
         RELEASE = 0;
-        printf("%s ", lookup(ksname)->defn);
-        //printf ("%s ", ksname);
+        //printf("%s ", lookup(ksname)->defn);
+        printf ("%s ", ksname);
         if (kc_set && e->keycode != kc)
                 ;
         if (nbytes < 0) nbytes = 0;
