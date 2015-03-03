@@ -350,7 +350,6 @@ do_KeyPress (XEvent *eventp)
         static int bsize = 8;
         Status status;
         FILE *fd_log;
-        static char *str_skip = "Pause";
 
         if (buf == NULL)
                 buf = malloc (bsize);
@@ -382,14 +381,12 @@ do_KeyPress (XEvent *eventp)
         if (RELEASE == 1) {
                 fd_log = fopen(output_log, "a");
                 vkey = lookup(ksname);
-                if (strcmp(ksname, str_skip) != 0) {
-                        if (vkey != NULL) {
-                                fprintf (fd_log, "%s ", vkey->defn);
-                                printf ("%s ", vkey->defn);
-                        } else {
-                                fprintf (fd_log, "%s ", ksname);
-                                printf ("%s ", ksname);
-                        }
+                if (vkey != NULL) {
+                        fprintf (fd_log, "%s ", vkey->defn);
+                        printf ("%s ", vkey->defn);
+                } else {
+                        fprintf (fd_log, "%s ", ksname);
+                        printf ("%s ", ksname);
                 }
                 fclose(fd_log);
         }
@@ -426,15 +423,38 @@ do_KeyRelease (XEvent *eventp)
 static void
 do_ButtonPress (XEvent *eventp)
 {
+        const char *vbtn;
+        FILE *fd_log;
+
         XButtonEvent *e = (XButtonEvent *) eventp;
 
-        printf ("    state 0x%x, button %u, same_screen %s\n",
-                        e->state, e->button, e->same_screen ? Yes : No);
+        if (RELEASE == 0) {
+                switch (e->button) {
+                        case 1: vbtn = "vLBUTTONDOWN"; break;
+                        case 2: vbtn = "vMBUTTONDOWN"; break;
+                        case 3: vbtn = "vRBUTTONDOWN"; break;
+                        case 4: vbtn = "Wheel"; break;
+                        case 5: vbtn = "Wheel"; break;
+                }
+        } else {
+                switch (e->button) {
+                        case 1: vbtn = "vLBUTTONUP"; break;
+                        case 2: vbtn = "vMBUTTONUP"; break;
+                        case 3: vbtn = "vRBUTTONUP"; break;
+                        case 4: vbtn = "Wheel"; break;
+                        case 5: vbtn = "Wheel"; break;
+                }
+        }
+        fd_log = fopen(output_log, "a");
+        fprintf(fd_log, "%s ", vbtn);
+        fclose(fd_log);
+        printf ("%s ", vbtn);
 }
 
 static void
 do_ButtonRelease (XEvent *eventp)
 {
+        RELEASE = 1;
         do_ButtonPress (eventp);		/* since it has the same info */
 }
 
