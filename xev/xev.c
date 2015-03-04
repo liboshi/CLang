@@ -433,22 +433,27 @@ do_ButtonPress (XEvent *eventp)
                         case 1: vbtn = "vLBUTTONDOWN"; break;
                         case 2: vbtn = "vMBUTTONDOWN"; break;
                         case 3: vbtn = "vRBUTTONDOWN"; break;
-                        case 4: vbtn = "Wheel"; break;
-                        case 5: vbtn = "Wheel"; break;
+                        case 4: vbtn = "Wheel-1"; break;
+                        case 5: vbtn = "Wheel1"; break;
                 }
         } else {
                 switch (e->button) {
                         case 1: vbtn = "vLBUTTONUP"; break;
                         case 2: vbtn = "vMBUTTONUP"; break;
                         case 3: vbtn = "vRBUTTONUP"; break;
-                        case 4: vbtn = "Wheel"; break;
-                        case 5: vbtn = "Wheel"; break;
+                        case 4: vbtn = "Wheel-1"; break;
+                        case 5: vbtn = "Wheel1"; break;
                 }
         }
         fd_log = fopen(output_log, "a");
-        fprintf(fd_log, "%s ", vbtn);
+        if ((RELEASE == 1) && (e->button == 4 || e->button == 5)) {
+                        fprintf(fd_log, "%s ", vbtn);
+        } else if (e->button == 1 || e->button == 2 || e->button == 3) {
+                        fprintf(fd_log, "%s ", vbtn);
+        }
         fclose(fd_log);
         printf ("%s ", vbtn);
+        RELEASE = 0;
 }
 
 static void
