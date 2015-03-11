@@ -323,6 +323,29 @@ keymap()
         set("Katakana",          "Katakana");
         set("Hiragana",          "Hiragana");
         set("Hankaku_Zenkaku",   "Zenkaku/Hankaku");
+
+        /*
+         * MultiMedia keys
+         */
+
+        set("XF86AudioPrev",        "SCAN_PREVIOUS_TRACK");
+        set("XF86AudioNext",        "SCAN_NEXT_TRACK");
+        set("XF86AudioMute",        "MUTE");
+        set("XF86AudioPlay",        "PLAY_PAUSE");
+        set("XF86AudioStop",        "PLAY_PAUSE");
+        set("XF86AudioLowerVolume", "VOLUME_DOWN");
+        set("XF86AudioRaiseVolume", "VOLUME_UP");
+        set("XF86Calculator",       "CALCULATOR");
+        set("XF86MyComputer",       "MY_COPUTER");
+        set("XF86Mail",             "MAIL");
+        set("XF86AudioMedia",       "MEDIA_SELECT");
+        set("XF86HomePage",         "BROWSER_HOME");
+        set("XF86Search",           "BROWSER_SEARCH");
+        set("XF86Favorites",        "BROWSER_FAVORITES");
+        set("XF86Reload",           "BROWSER_REFRESH");
+        set("XF86Forward",          "BROWSER_FORWARD");
+        set("XF86Back",             "BROWSER_BACK");
+        set("Cancel",               "BROWSER_STOP");
 }
 
 static void
