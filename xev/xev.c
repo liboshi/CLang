@@ -736,38 +736,13 @@ main (int argc, char **argv)
                 XMapWindow (dpy, w);
                 /* Move the pointer into the window */
                 XWarpPointer (dpy, screen, w, 0, 0, 320, 240, 320, 240);
-                /* Grab keyboard events */
-        }
-
-        if (xim && xim_style) {
-                xic = XCreateIC (xim,
-                                XNInputStyle, xim_style,
-                                XNClientWindow, w,
-                                XNFocusWindow, w,
-                                NULL);
-
-                if (xic == NULL) {
-                        fprintf (stderr, "XCreateIC failed\n");
-                }
-        }
-
-        have_rr = XRRQueryExtension (dpy, &rr_event_base, &rr_error_base);
-        if (have_rr) {
-                int rr_major, rr_minor;
-
-                if (XRRQueryVersion (dpy, &rr_major, &rr_minor)) {
-                        int rr_mask = RRScreenChangeNotifyMask;
-
-                        if (rr_major > 1
-                                        || (rr_major == 1 && rr_minor >= 2))
-                                rr_mask |= RRCrtcChangeNotifyMask | RROutputChangeNotifyMask |
-                                        RROutputPropertyNotifyMask;
-                        XRRSelectInput (dpy, w, rr_mask);
-                }
         }
 
         for (done = 0; !done; ) {
                 XEvent event;
+
+                /* Grab keyboard events */
+                XGrabKeyboard(dpy, w, False, GrabModeAsync, GrabModeAsync, CurrentTime);
 
                 XNextEvent (dpy, &event);
 
