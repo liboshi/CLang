@@ -1,21 +1,21 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void printTwoNumbers(int (*numberSource) (void)) {
-        printf("%d add %d\n", numberSource(), numberSource());
+void print_two_numbers(int (*number_source) (void)) {
+        printf("%d add %d\n", number_source(), number_source());
 }
 
-int overNineThousand(void) {
+int over_nine_thousand(void) {
         return (rand() % 1000) + 9001;
 }
 
-int meaningOfLife(void) {
+int meaning_of_life(void) {
         return 29;
 }
 
 int main(void) {
-        printTwoNumbers(&rand);
-        printTwoNumbers(&overNineThousand);
-        printTwoNumbers(&meaningOfLife);
+        print_two_numbers(&rand);
+        print_two_numbers(&over_nine_thousand);
+        print_two_numbers(&meaning_of_life);
         return 0;
 }
