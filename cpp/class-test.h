@@ -21,3 +21,16 @@ public:
         X(int ii);
         int f() const;
 };
+
+class A {
+public:
+        A();
+        void a();
+        ~A();
+}
+
+class B {
+        B();
+        void b();
+        ~B();
+}
