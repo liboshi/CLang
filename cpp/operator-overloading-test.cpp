@@ -8,11 +8,11 @@ public:
         Integer(int ii) : i(ii) {}
         const Integer
         operator+(const Integer& rv) const {
-                cout << "operator+=" << endl;
+                cout << "operator+" << endl;
                 return Integer(i + rv.i);
         }
         Integer&
-        operator+(const Integer& rv) {
+        operator+=(const Integer& rv) {
                 cout << "operator+=" << endl;
                 i += rv.i;
                 return *this;
