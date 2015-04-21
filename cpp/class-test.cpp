@@ -126,12 +126,36 @@ void Stash::inflate(int increase) {
         quantity = newQuantity;
 }
 
-X::X(int ii) : i(ii) {}
-int X::f() const { return i; }
+X::X() {
+        cout << "This is X constructor" << endl;
+}
+
+void X::println() {
+        cout << "This is class X" << endl;
+}
+
+X::~X() {
+        cout << "This is X deconstructor" << endl;
+}
+
+Y::Y() {
+        cout << "This is Y constructor" << endl;
+}
+
+Y::~Y() {
+        cout << "This is Y deconstructor" << endl;
+}
+
+void Y::println() {
+        cout << "This is Class Y" << endl;
+}
+
+void printlnn(X& x) {
+        x.println();
+}
 
 int main() {
-        X x1(10);
-        const X x2(20);
-        x1.f();
-        x2.f();
+        Y y;
+        y.println();
+        printlnn(y);
 }

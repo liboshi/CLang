@@ -16,21 +16,15 @@ public:
 };
 
 class X {
-        int i;
 public:
-        X(int ii);
-        int f() const;
+        X();
+        virtual void println();
+        ~X();
 };
 
-class A {
+class Y : public X {
 public:
-        A();
-        void a();
-        ~A();
-}
-
-class B {
-        B();
-        void b();
-        ~B();
-}
+        Y();
+        void println();
+        ~Y();
+};
