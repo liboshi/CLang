@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 void print_two_numbers(int (*number_source) (void)) {
         printf("%d add %d\n", number_source(), number_source());
@@ -13,9 +14,34 @@ int meaning_of_life(void) {
         return 29;
 }
 
-int main(void) {
+typedef struct _MyMsg {
+                int appId;
+                        char msgbody[32];
+} MyMsg;
+
+void myfunc(MyMsg *msg)
+{
+        if (strlen(msg->msgbody) > 0 )
+                printf("App Id = %d \nMsg = %s \n",msg->appId, msg->msgbody);
+        else
+                printf("App Id = %d \nMsg = No Msg\n",msg->appId);
+}
+
+void (*callback)(MyMsg *);
+
+int main(void)
+{
         print_two_numbers(&rand);
         print_two_numbers(&over_nine_thousand);
         print_two_numbers(&meaning_of_life);
+
+        MyMsg msg1;
+        msg1.appId = 100;
+        strcpy(msg1.msgbody, "This is a test\n");
+
+        callback = myfunc;
+
+        callback(&msg1);
+
         return 0;
 }
