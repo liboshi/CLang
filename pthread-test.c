@@ -93,8 +93,7 @@ int main_b() {
                 printf("Main: creating thread %ld \n", t);
                 rc = pthread_create(&thread[t], attr, busyWork, (void *)t);
                 if (rc) {
-                        printf("ERROR: return code from pthread_create() is %d\
-                                \n", rc);
+                        printf("ERROR: return code from pthread_create() is %d \n", rc);
                         exit(-1);
                 }
         }
@@ -104,12 +103,10 @@ int main_b() {
         for (t = 0; t < NUM_THREADS; t++) {
                 rc = pthread_join(thread[t], &status);
                 if (rc) {
-                        printf("ERROR: return code from pthread_join() is %d \
-                                \n", rc);
+                        printf("ERROR: return code from pthread_join() is %d \n", rc);
                         exit(-1);
                 }
-                printf("Main: completed join with thread %ld having a status of\
-                         %ld\n", t, (long)status);
+                printf("Main: completed join with thread %ld having a status of %ld\n", t, (long)status);
         }
         printf("Main: program completed. Exiting.\n");
         pthread_exit(NULL);
