@@ -47,7 +47,8 @@ busyWork(void *t) {
         pthread_exit((void *)t);
 }
 
-int main_a() {
+void
+main_a() {
         pthread_t threads[NUM_THREADS];
         char *messages[NUM_THREADS] = {
                                        "Hello 1",
@@ -76,9 +77,10 @@ int main_a() {
                         exit(-1);
                 }
         }
-        pthread_exit(NULL);
 }
-int main_b() {
+
+void
+main_b() {
         pthread_t thread[NUM_THREADS];
         pthread_attr_t *attr;
         int rc;
@@ -109,11 +111,11 @@ int main_b() {
                 printf("Main: completed join with thread %ld having a status of %ld\n", t, (long)status);
         }
         printf("Main: program completed. Exiting.\n");
-        pthread_exit(NULL);
 }
 
 int
 main(int argc, char *argv[]) {
         main_b();
+        pthread_exit(NULL);
 }
 
