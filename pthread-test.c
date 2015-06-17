@@ -116,6 +116,5 @@ main_b() {
 int
 main(int argc, char *argv[]) {
         main_b();
-        pthread_exit(NULL);
 }
 
