@@ -6,6 +6,7 @@
 #define NUM_THREADS 5
 #define N 1000
 #define MEGEXTRA 1000
+#define VECLEN 100
 
 typedef struct _thread_data {
         int thread_id;
@@ -13,8 +14,17 @@ typedef struct _thread_data {
         char *message;
 } thread_data;
 
+typedef struct {
+        double *a;
+        double *b;
+        double sum;
+        int veclen;
+} dotdata;
+
 thread_data thread_data_array[NUM_THREADS];
 pthread_attr_t attr;
+pthread_mutex_t mutexsum;
+dotdata dotstr;
 
 void*
 printHello(void *threadid) {
@@ -67,6 +77,31 @@ dowork(void *threadid) {
                 }
         }
         pthread_exit((void *)threadid);
+}
+
+void*
+dotprod(void *arg) {
+        int i, start, end, len;
+        long offset;
+        double mysum, *x, *y;
+        offset = (long)arg;
+
+        len = dotstr.veclen;
+        start = offset * len;
+        end = start + len;
+        x = dotstr.a;
+        y = dotstr.b;
+
+        mysum = 0;
+        for (i = start; i < end; i++) {
+                mysum += (x[i] * y[i]);
+        }
+
+        pthread_mutex_lock(&mutexsum);
+        dotstr.sum += mysum;
+        pthread_mutex_unlock(&mutexsum);
+
+        pthread_exit((void*) 0);
 }
 
 void
@@ -161,7 +196,56 @@ main_c() {
 }
 
 int
+main_d() {
+        pthread_t threads[NUM_THREADS];
+        long i;
+        double *a, *b;
+        void *status;
+        pthread_attr_t attr;
+
+        /* Assign storage and initialize values */
+        a = (double*) malloc (NUM_THREADS * VECLEN * sizeof(double));
+        b = (double*) malloc (NUM_THREADS * VECLEN * sizeof(double));
+
+        for (i = 0; i < VECLEN*NUM_THREADS; i++) {
+                a[i] = 1.0;
+                b[i] = a[i];
+        }
+
+        dotstr.veclen = VECLEN;
+        dotstr.a = a;
+        dotstr.b = b;
+        dotstr.sum = 0;
+
+        pthread_mutex_init(&mutexsum, NULL);
+
+        /* Create threads to perform the dotproduct  */
+        pthread_attr_init(&attr);
+        pthread_attr_setdetachstate(&attr, PTHREAD_CREATE_JOINABLE);
+
+        for(i = 0; i<NUM_THREADS; i++)
+        {
+                pthread_create(&threads[i], &attr, dotprod, (void *)i);
+        }
+
+        pthread_attr_destroy(&attr);
+
+        /* Wait on the other threads */
+        for(i = 0; i < NUM_THREADS; i++)
+        {
+                pthread_join(threads[i], &status);
+        }
+
+        /* After joining, print out the results and cleanup */
+        printf ("Sum =  %f \n", dotstr.sum);
+        free (a);
+        free (b);
+        pthread_mutex_destroy(&mutexsum);
+        return 0;
+}
+
+int
 main(int argc, char *argv[]) {
-        main_c();
+        main_d();
 }
 
