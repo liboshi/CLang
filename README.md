@@ -3,7 +3,7 @@ CLang
 
 Travis CI Status:
 
-![Alt text](https://travis-ci.org/liboshi/CLang.svg?branch=master "travis-ci status")
+[![Build Status](https://travis-ci.org/liboshi/clang.svg?branch=master)](https://travis-ci.org/liboshi/clang)
 
 C Language practice.
 
