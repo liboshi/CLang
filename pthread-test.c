@@ -2,7 +2,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
+
 #define NUM_THREADS 5
+#define N 1000
+#define MEGEXTRA 1000
 
 typedef struct _thread_data {
         int thread_id;
@@ -11,6 +14,7 @@ typedef struct _thread_data {
 } thread_data;
 
 thread_data thread_data_array[NUM_THREADS];
+pthread_attr_t attr;
 
 void*
 printHello(void *threadid) {
@@ -45,6 +49,24 @@ busyWork(void *t) {
         }
         printf("Thread %ld done. Result = %e \n", tid, result);
         pthread_exit((void *)t);
+}
+
+void*
+dowork(void *threadid) {
+        double A[N][N];
+        int i, j;
+        long tid;
+        size_t mystacksize;
+
+        tid = (long)threadid;
+        pthread_attr_getstacksize(&attr, &mystacksize);
+        printf("Thread %ld: stack size = %li bytes \n", tid, mystacksize);
+        for (i = 0; i < N; i++) {
+                for (j = 0; j < N; j++) {
+                        A[i][j] = ((i * j) / 3.452) + (N - i);
+                }
+        }
+        pthread_exit((void *)threadid);
 }
 
 void
@@ -114,7 +136,32 @@ main_b() {
 }
 
 int
+main_c() {
+        pthread_t threads[NUM_THREADS];
+        size_t stacksize;
+        int rc;
+        long t;
+
+        pthread_attr_init(&attr);
+        pthread_attr_getstacksize(&attr, &stacksize);
+        printf("Default stack size = %li\n", stacksize);
+        stacksize = sizeof(double) * N * N + MEGEXTRA;
+        printf("Amount of stack needed per thread = %li\n", stacksize);
+        pthread_attr_setstacksize(&attr, stacksize);
+        printf("Creating threads with stack size = %li bytes\n", stacksize);
+        for (t = 0; t < NUM_THREADS; t++) {
+                rc = pthread_create(&threads[t], &attr, dowork, (void *)t);
+                if (rc) {
+                        printf("ERROR: return code from pthread_create() is %d\n", rc);
+                        exit(-1);
+                }
+        }
+        printf("Created %ld threads.\n", t);
+        return 0;
+}
+
+int
 main(int argc, char *argv[]) {
-        main_b();
+        main_c();
 }
 
