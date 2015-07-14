@@ -122,6 +122,14 @@ int strcspn_test()
         return 0;
 }
 
+int
+strlen_test()
+{
+        char *name = "";
+        printf("The length is %d\n", strlen(name));
+        return 0;
+}
+
 int main()
 {
         int ret;
@@ -134,6 +142,7 @@ int main()
         //ret = strchr_test();
         //ret = strcmp_test();
         //ret = strcpy_test();
-        ret = strcspn_test();
+        //ret = strcspn_test();
+        strlen_test();
         return ret;
 }
