@@ -10,12 +10,7 @@ main() {
         char *myfifo = "/tmp/myfifo";
         mkfifo(myfifo, 0666);
 
-        fd = open(myfifo, O_WRONLY);
-        printf("The handle is %d", fd);
-        write(fd, "Hi", sizeof("Hi"));
-        close(fd);
-
-        unlink(myfifo);
-
+        fd = open(myfifo, O_WRONLY | O_NONBLOCK);
+        write(fd, "Hello world", sizeof("Hello world"));
         return 0;
 }

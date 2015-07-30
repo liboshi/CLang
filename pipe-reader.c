@@ -9,9 +9,9 @@
 int
 main()
 {
+        int i = 2;
         int fd;
         char *myfifo = "/tmp/myfifo";
-        char buf[MAX_BUF];
         struct stat sb;
 
         /* open, read, and display the message from the FIFO */
@@ -20,12 +20,16 @@ main()
                 perror("stat");
                 return -1;
         }
-        fd = open(myfifo, O_RDONLY);
-        printf("The handle is %d\n", fd);
-        read(fd, buf, MAX_BUF);
-        printf("Received: %s\n", buf);
-        printf("Received size: %lu\n", strlen(buf));
-        close(fd);
+        while (i) {
+                fd = open(myfifo, O_RDONLY);
+                char buf[MAX_BUF];
+                read(fd, buf, MAX_BUF);
+                if (strlen(buf) > 0) {
+                        printf("Received: %s\n", buf);
+                        close(fd);
+                }
+                usleep(3000);
+        }
 
         return 0;
 }
