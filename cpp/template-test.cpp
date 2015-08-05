@@ -58,7 +58,7 @@ main()
         cout << Max(3, 7) << endl;
         cout << Max(3.0, 7.0) << endl;
         try {
-                Stack<int>         intStack;
+                Stack<int> intStack;
                 Stack<string> stringStack;
 
                 intStack.push(7);
