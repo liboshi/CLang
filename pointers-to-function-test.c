@@ -24,8 +24,8 @@ die(const char *message)
 
 typedef int (*compare_cb)(int, int);
 
-int
-*bubble_sort(int *numbers, int count, compare_cb cmp)
+int *
+bubble_sort(int *numbers, int count, compare_cb cmp)
 {
         int temp = 0;
         int i = 0;
