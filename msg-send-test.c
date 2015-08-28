@@ -23,12 +23,10 @@ int main()
         size_t buf_length;
 
         /*
-         * Get the message queue id for the "name" 1234, which was created by
+         * Get the message queue id for the "name" 9527, which was created by
          * by the server.
          */
-        key = 1234;
-        (void) fprintf(stderr, "\nmsgget: Calling msgget(%#lx, %#o)\n",
-                       key, msgflg);
+        key = 9527;
         if ((msqid = msgget(key, msgflg)) < 0) {
                 perror("msgget");
                 return 1;
@@ -41,7 +39,7 @@ int main()
 
         (void) fprintf(stderr,"msgget: msgget succeeded: msqid = %d\n", msqid);
 
-        (void) strcpy(sbuf.mtext, "Did you get this?");
+        (void) strcpy(sbuf.mtext, "Hello message receiver...");
 
         (void) fprintf(stderr,"msgget: msgget succeeded: msqid = %d\n", msqid);
 
@@ -51,7 +49,6 @@ int main()
          * Send a message.
          */
         if (msgsnd(msqid, &sbuf, buf_length, IPC_NOWAIT) < 0) {
-                printf ("%d, %d, %s, %d\n", msqid, sbuf.mtype, sbuf.mtext, buf_length);
                 perror("msgsnd");
                 return 1;
         } else {

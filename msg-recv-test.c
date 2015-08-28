@@ -24,10 +24,10 @@ main()
 
         /*
          * Get the message queue id for the
-         * "name" 1234, which was created by
+         * "name" 9527, which was created by
          * the server.
          */
-        key = 1234;
+        key = 9527;
 
         if ((msqid = msgget(key, 0666)) < 0) {
                 perror("msgget");
