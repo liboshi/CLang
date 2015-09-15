@@ -16,7 +16,7 @@ int meaning_of_life(void) {
 
 typedef struct _MyMsg {
                 int appId;
-                        char msgbody[32];
+                char msgbody[32];
 } MyMsg;
 
 void myfunc(MyMsg *msg)
