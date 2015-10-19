@@ -26,7 +26,7 @@ main()
         mythread = (pthread_t *)malloc(sizeof(*mythread));
         pthread_create(mythread, NULL, (void*)threadfunc, NULL);
 	sem_wait(&g_sema);
-        printf("Semaphore locked.\n");
+        printf("Semaphore locked just now.\n");
         return 0;
 }
 
