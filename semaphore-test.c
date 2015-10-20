@@ -8,24 +8,29 @@
 #include <sys/stat.h>
 #include <sys/types.h>
 
-sem_t g_sema;
+sem_t *g_sema = NULL;
 
 void threadfunc()
 {
         printf("Hello from threadfunc!\n");
         sleep(3);
-        sem_post(&g_sema);
+        sem_post(g_sema);
 }
 
 int
 main()
 {
         pthread_t *mythread;
+        // Unlink semaphore
+        sem_unlink("/testsema");
         // Init semaphore
-        sem_init(&g_sema, 0, 0);
+        if ((g_sema = sem_open("/testsema", O_CREAT, 0644, 0)) == SEM_FAILED) {
+                perror("sem_open");
+                exit(EXIT_FAILURE);
+        }
         mythread = (pthread_t *)malloc(sizeof(*mythread));
         pthread_create(mythread, NULL, (void*)threadfunc, NULL);
-	sem_wait(&g_sema);
+	sem_wait(g_sema);
         printf("Semaphore locked just now.\n");
         return 0;
 }
