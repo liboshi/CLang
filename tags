@@ -1,0 +1,350 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+A	cpp/class-test.cpp	/^class A {$/;"	c	file:
+Animal	cpp/virtual-test.cpp	/^class Animal$/;"	c	file:
+B	cpp/class-test.cpp	/^class B : public A {$/;"	c	file:
+BIT	inputmonitor-kernel.c	/^#define BIT(/;"	d	file:
+BITS_PER_LONG	inputmonitor-kernel.c	/^#define BITS_PER_LONG /;"	d	file:
+BUF_SIZE	cp.c	/^#define BUF_SIZE /;"	d	file:
+COUNT_LIMIT	thread-condition.c	/^#define COUNT_LIMIT /;"	d	file:
+Cat	cpp/virtual-test.cpp	/^class Cat : public Animal$/;"	c	file:
+DEV_INPUT_EVENT	inputmonitor-kernel.c	/^#define DEV_INPUT_EVENT /;"	d	file:
+DOTDATA	thread-mutex.c	/^} DOTDATA;$/;"	t	typeref:struct:__anon8	file:
+Dog	cpp/virtual-test.cpp	/^class Dog : public Animal$/;"	c	file:
+EOL	simple-web-server.c	/^#define EOL /;"	d	file:
+EOL_SIZE	simple-web-server.c	/^#define EOL_SIZE /;"	d	file:
+EVENT_DEV_NAME	inputmonitor-kernel.c	/^#define EVENT_DEV_NAME /;"	d	file:
+EV_SYN	inputmonitor-kernel.c	/^#define EV_SYN /;"	d	file:
+FALSE	string-p.c	/^#define FALSE /;"	d	file:
+FUNCTION	cpp/define-test.cpp	/^#define FUNCTION /;"	d	file:
+FUNCTION	cpp/define-test.cpp	/^#define FUNCTION(/;"	d	file:
+FUNCTION	cpp/define-test.cpp	/^#undef FUNCTION$/;"	d	file:
+Fish	cpp/virtual-test.cpp	/^class Fish : public Animal$/;"	c	file:
+HASHSIZE	dict.c	/^#define HASHSIZE /;"	d	file:
+Integer	cpp/operator-overloading-test.cpp	/^        Integer(int ii) : i(ii) {}$/;"	f	class:Integer
+Integer	cpp/operator-overloading-test.cpp	/^class Integer {$/;"	c	file:
+LONG	inputmonitor-kernel.c	/^#define LONG(/;"	d	file:
+MAX_BUF	pipe-reader.c	/^#define MAX_BUF /;"	d	file:
+MEGEXTRA	pthread-test.c	/^#define MEGEXTRA /;"	d	file:
+MODE_CAPTURE	inputmonitor-kernel.c	/^	MODE_CAPTURE,$/;"	e	enum:evtest_mode	file:
+MODE_QUERY	inputmonitor-kernel.c	/^	MODE_QUERY,$/;"	e	enum:evtest_mode	file:
+MODE_VERSION	inputmonitor-kernel.c	/^	MODE_VERSION,$/;"	e	enum:evtest_mode	file:
+MSGKEY	msgReceive.c	/^#define MSGKEY /;"	d	file:
+MSGKEY	msgSender.c	/^#define MSGKEY /;"	d	file:
+MSGSZ	msg-recv-test.c	/^#define MSGSZ /;"	d	file:
+MSGSZ	msg-send-test.c	/^#define MSGSZ /;"	d	file:
+Max	cpp/template-test.cpp	/^T Max(T a, T b)$/;"	f
+MyMsg	call-back-test.c	/^} MyMsg;$/;"	t	typeref:struct:_MyMsg	file:
+N	pthread-test.c	/^#define N /;"	d	file:
+NAME_ELEMENT	inputmonitor-kernel.c	/^#define NAME_ELEMENT(/;"	d	file:
+NBITS	inputmonitor-kernel.c	/^#define NBITS(/;"	d	file:
+NUL	string-p.c	/^#define NUL /;"	d	file:
+NUMTHRDS	thread-mutex.c	/^#define NUMTHRDS /;"	d	file:
+NUM_THREADS	pthread-test.c	/^#define NUM_THREADS /;"	d	file:
+NUM_THREADS	thread-condition.c	/^#define NUM_THREADS /;"	d	file:
+NUM_THREADS	thread-demo.c	/^#define NUM_THREADS /;"	d	file:
+OFF	inputmonitor-kernel.c	/^#define OFF(/;"	d	file:
+OUTPUT	cpp/define-test.cpp	/^#define OUTPUT(/;"	d	file:
+PACKAGE_VERSION	inputmonitor-kernel.c	/^#define PACKAGE_VERSION /;"	d	file:
+SYN_CNT	inputmonitor-kernel.c	/^#define SYN_CNT /;"	d	file:
+SYN_DROPPED	inputmonitor-kernel.c	/^#define SYN_DROPPED /;"	d	file:
+SYN_MAX	inputmonitor-kernel.c	/^#define SYN_MAX /;"	d	file:
+SYN_MT_REPORT	inputmonitor-kernel.c	/^#define SYN_MT_REPORT /;"	d	file:
+Stack	cpp/template-test.cpp	/^class Stack$/;"	c	file:
+Stash	cpp/class-test.cpp	/^Stash::Stash(int sz) {$/;"	f	class:Stash
+Stash	cpp/class-test.cpp	/^Stash::Stash(int sz, int initQuantity) {$/;"	f	class:Stash
+Stash	cpp/class-test.h	/^class Stash {$/;"	c
+TCOUNT	thread-condition.c	/^#define TCOUNT /;"	d	file:
+TRUE	string-p.c	/^#define TRUE /;"	d	file:
+Tree	cpp/class-test.cpp	/^Tree::Tree(int initHeight) {$/;"	f	class:Tree
+Tree	cpp/class-test.cpp	/^class Tree {$/;"	c	file:
+Treea	cpp/class-test.cpp	/^Treea::Treea(int initHeight) : Tree(initHeight) {$/;"	f	class:Treea
+Treea	cpp/class-test.cpp	/^class Treea : public Tree {$/;"	c	file:
+VECLEN	pthread-test.c	/^#define VECLEN /;"	d	file:
+VECLEN	thread-mutex.c	/^#define VECLEN /;"	d	file:
+X	cpp/class-test.cpp	/^X::X() {$/;"	f	class:X
+X	cpp/class-test.h	/^class X {$/;"	c
+Y	cpp/class-test.cpp	/^Y::Y() {$/;"	f	class:Y
+Y	cpp/class-test.h	/^class Y : public X {$/;"	c
+_GNU_SOURCE	inputmonitor-kernel.c	/^#define _GNU_SOURCE /;"	d	file:
+_MyMsg	call-back-test.c	/^typedef struct _MyMsg {$/;"	s	file:
+_thread_data	pthread-test.c	/^typedef struct _thread_data {$/;"	s	file:
+a	cpp/structure-test.cpp	/^        infoa a;$/;"	m	struct:__anon2	file:
+a	pthread-test.c	/^        double *a;$/;"	m	struct:__anon3	file:
+a	structure-test.c	/^        infoa a;$/;"	m	struct:__anon7	file:
+a	thread-mutex.c	/^        double      *a;$/;"	m	struct:__anon8	file:
+absolutes	inputmonitor-kernel.c	/^static const char * const absolutes[ABS_MAX + 1] = {$/;"	v	file:
+absval	inputmonitor-kernel.c	/^static const char * const absval[6] = { "Value", "Min  ", "Max  ", "Fuzz ", "Flat ", "Resolution "};$/;"	v	file:
+add	cpp/class-test.cpp	/^int Stash::add(void* element) {$/;"	f	class:Stash
+age	cpp/structure-test.cpp	/^        int age;$/;"	m	struct:__anon1	file:
+age	string-utils.c	/^        int age;$/;"	m	struct:__anon5	file:
+age	structure-test.c	/^        int age;$/;"	m	struct:__anon6	file:
+appId	call-back-test.c	/^                int appId;$/;"	m	struct:_MyMsg	file:
+attr	pthread-test.c	/^pthread_attr_t attr;$/;"	v
+b	pthread-test.c	/^        double *b;$/;"	m	struct:__anon3	file:
+b	thread-mutex.c	/^        double      *b;$/;"	m	struct:__anon8	file:
+binary_search	binary-search.c	/^int binary_search(int array[], int value, int size)$/;"	f
+bubble_sort	pointers-to-function-test.c	/^bubble_sort(int *numbers, int count, compare_cb cmp)$/;"	f
+busyWork	pthread-test.c	/^busyWork(void *t) {$/;"	f
+busy_work	thread-demo.c	/^void *busy_work(void *t)$/;"	f
+callThd	thread-mutex.c	/^pthread_t callThd[NUMTHRDS];$/;"	v
+callback	call-back-test.c	/^void (*callback)(MyMsg *);$/;"	v
+childproc	msgReceive.c	/^void childproc(){$/;"	f
+codename	inputmonitor-kernel.c	/^static inline const char* codename(unsigned int type, unsigned int code)$/;"	f	file:
+compare_cb	pointers-to-function-test.c	/^typedef int (*compare_cb)(int, int);$/;"	t	file:
+connection	simple-web-server.c	/^int connection(int fd) {$/;"	f
+count	cpp/class-test.cpp	/^int Stash::count() {$/;"	f	class:Stash
+count	thread-condition.c	/^int count = 0;$/;"	v
+count_mutex	thread-condition.c	/^pthread_mutex_t count_mutex;$/;"	v
+count_threshold_cv	thread-condition.c	/^pthread_cond_t count_threshold_cv;$/;"	v
+defn	dict.c	/^        char *defn; \/* replacement text *\/$/;"	m	struct:nlist	file:
+del_substr	string-p.c	/^int del_substr(char *str, char const *substr)$/;"	f
+die	pointers-to-function-test.c	/^die(const char *message)$/;"	f
+do_capture	inputmonitor-kernel.c	/^static int do_capture(const char *device)$/;"	f	file:
+do_query	inputmonitor-kernel.c	/^static int do_query(const char *device, const char *event_type, const char *keyname)$/;"	f	file:
+dotdata	pthread-test.c	/^} dotdata;$/;"	t	typeref:struct:__anon3	file:
+dotprod	pthread-test.c	/^dotprod(void *arg) {$/;"	f
+dotprod	thread-mutex.c	/^void *dotprod(void *arg)$/;"	f
+dotstr	pthread-test.c	/^dotdata dotstr;$/;"	v
+dotstr	thread-mutex.c	/^DOTDATA dotstr; $/;"	v
+dowork	pthread-test.c	/^dowork(void *threadid) {$/;"	f
+eat	cpp/virtual-test.cpp	/^        virtual void eat() const { cout << "Generaic animal eat" << endl;}$/;"	f	class:Animal
+eat	cpp/virtual-test.cpp	/^        void eat() const { cout << "Cat eat" << endl; }$/;"	f	class:Cat
+eat	cpp/virtual-test.cpp	/^        void eat() const { cout << "Dog eat" << endl; }$/;"	f	class:Dog
+eat	cpp/virtual-test.cpp	/^        void eat() const { cout << "Fish eat" << endl; }$/;"	f	class:Fish
+elems	cpp/template-test.cpp	/^                vector<T> elems;$/;"	m	class:Stack	file:
+empty	cpp/template-test.cpp	/^                bool empty() const {$/;"	f	class:Stack
+error	simple-web-server.c	/^void error(const char *msg) {$/;"	f
+event_type	inputmonitor-kernel.c	/^	int event_type;$/;"	m	struct:query_mode	file:
+events	inputmonitor-kernel.c	/^static const char * const events[EV_MAX + 1] = {$/;"	v	file:
+evtest_mode	inputmonitor-kernel.c	/^enum evtest_mode {$/;"	g	file:
+ext	simple-web-server.c	/^        char *ext;$/;"	m	struct:__anon4	file:
+extensions	simple-web-server.c	/^extn extensions[] ={$/;"	v
+extn	simple-web-server.c	/^} extn;$/;"	t	typeref:struct:__anon4	file:
+f	cpp/reinterpret-cast-test.cpp	/^int f() { return 42; }$/;"	f
+fetch	cpp/class-test.cpp	/^void* Stash::fetch(int index) {$/;"	f	class:Stash
+find_query_mode	inputmonitor-kernel.c	/^static const struct query_mode *find_query_mode(const char *query_mode)$/;"	f	file:
+find_query_mode_by_name	inputmonitor-kernel.c	/^static const struct query_mode *find_query_mode_by_name(const char *name)$/;"	f	file:
+find_query_mode_by_value	inputmonitor-kernel.c	/^static const struct query_mode *find_query_mode_by_value(int event_type)$/;"	f	file:
+foo	extern-foo-test.c	/^foo()$/;"	f
+force	inputmonitor-kernel.c	/^static const char * const force[FF_MAX + 1] = {$/;"	v	file:
+forcestatus	inputmonitor-kernel.c	/^static const char * const forcestatus[FF_STATUS_MAX + 1] = {$/;"	v	file:
+func	cpp/pointer-func-test.cpp	/^void func() {$/;"	f
+func	cpp/static-test.cpp	/^void func() {$/;"	f
+func_nonstatic	cpp/static-test.cpp	/^void func_nonstatic() {$/;"	f
+g_sema	semaphore-test.c	/^sem_t *g_sema = NULL;$/;"	v
+get_file_size	simple-web-server.c	/^int get_file_size(int fd) {$/;"	f
+get_int	cpp/vector-test.cpp	/^int get_int() {$/;"	f
+get_keycode	inputmonitor-kernel.c	/^static int get_keycode(const struct query_mode *query_mode, const char *kstr)$/;"	f	file:
+get_line	cpp/vector-test.cpp	/^int get_line() {$/;"	f
+get_words	cpp/vector-test.cpp	/^int get_words() {$/;"	f
+grade	cpp/structure-test.cpp	/^        int grade;$/;"	m	struct:__anon2	file:
+grade	structure-test.c	/^        int grade;$/;"	m	struct:__anon7	file:
+grow	cpp/class-test.cpp	/^void Tree::grow(int years) {$/;"	f	class:Tree
+hash	dict.c	/^unsigned hash(char *s)$/;"	f
+hashtab	dict.c	/^static struct nlist *hashtab[HASHSIZE]; \/* pointer table *\/$/;"	v	typeref:struct:nlist	file:
+height	cpp/class-test.cpp	/^        int height;$/;"	m	class:Tree	file:
+height	cpp/class-test.cpp	/^        int height;$/;"	m	class:Treea	file:
+i	cpp/class-test.cpp	/^        int i;$/;"	m	class:A	file:
+i	cpp/operator-overloading-test.cpp	/^        int i;$/;"	m	class:Integer	file:
+inc_count	thread-condition.c	/^void *inc_count(void *t)$/;"	f
+increment	cpp/class-test.cpp	/^int increment = 100;$/;"	v
+inflate	cpp/class-test.cpp	/^void Stash::inflate(int increase) {$/;"	f	class:Stash
+infoa	cpp/structure-test.cpp	/^} infoa;$/;"	t	typeref:struct:__anon1	file:
+infoa	structure-test.c	/^} infoa;$/;"	t	typeref:struct:__anon6	file:
+infob	cpp/structure-test.cpp	/^} infob;$/;"	t	typeref:struct:__anon2	file:
+infob	structure-test.c	/^} infob;$/;"	t	typeref:struct:__anon7	file:
+install	dict.c	/^struct nlist *install(char *name, char *defn)$/;"	f
+is_event_device	inputmonitor-kernel.c	/^static int is_event_device(const struct dirent *dir) {$/;"	f	file:
+j	cpp/class-test.cpp	/^        int j;$/;"	m	class:A	file:
+k	cpp/class-test.cpp	/^        int k;$/;"	m	class:A	file:
+keys	inputmonitor-kernel.c	/^static const char * const keys[KEY_MAX + 1] = {$/;"	v	file:
+leds	inputmonitor-kernel.c	/^static const char * const leds[LED_MAX + 1] = {$/;"	v	file:
+long_options	inputmonitor-kernel.c	/^static const struct option long_options[] = {$/;"	v	typeref:struct:option	file:
+lookup	dict.c	/^struct nlist *lookup(char *s)$/;"	f
+main	argv.c	/^int main(int argc, char **argv) {$/;"	f
+main	array-string-test.c	/^main(int argc, char *argv[])$/;"	f
+main	atoi-test.c	/^int main() {$/;"	f
+main	binary-search.c	/^int main(void) {$/;"	f
+main	call-back-test.c	/^int main(void)$/;"	f
+main	char-test.c	/^main() {$/;"	f
+main	cp.c	/^int main(int argc, char* argv[])$/;"	f
+main	cpp/class-test.cpp	/^int main() {$/;"	f
+main	cpp/define-test.cpp	/^main()$/;"	f
+main	cpp/hello.cpp	/^int main() {$/;"	f
+main	cpp/list-test.cpp	/^int main() {$/;"	f
+main	cpp/operator-overloading-test.cpp	/^int main() {$/;"	f
+main	cpp/pointer-func-test.cpp	/^int main() {$/;"	f
+main	cpp/reinterpret-cast-test.cpp	/^int main()$/;"	f
+main	cpp/static-test.cpp	/^int main() {$/;"	f
+main	cpp/structure-test.cpp	/^main() {$/;"	f
+main	cpp/template-test.cpp	/^main()$/;"	f
+main	cpp/vector-test.cpp	/^int main() {$/;"	f
+main	cpp/virtual-test.cpp	/^int main() {$/;"	f
+main	deamon-demo.c	/^int main(int argc, char* argv[])$/;"	f
+main	delay-exec.c	/^int main(void)$/;"	f
+main	dlopen-test.c	/^main(int argc, char **argv)$/;"	f
+main	embedded-python.c	/^int main(int argc, char *argv[])$/;"	f
+main	extend-python-with-c.c	/^int main(void)$/;"	f
+main	extern-main-test.c	/^main()$/;"	f
+main	file-read.c	/^int main(int argc, char *argv[])$/;"	f
+main	fork-test.c	/^main(int argc, char *argv[]) {$/;"	f
+main	inline-func-test.c	/^main()$/;"	f
+main	inputmonitor-kernel.c	/^int main (int argc, char **argv)$/;"	f
+main	malloc-test.c	/^main()$/;"	f
+main	msg-recv-test.c	/^main()$/;"	f
+main	msg-send-test.c	/^int main()$/;"	f
+main	msgReceive.c	/^main() {$/;"	f
+main	msgSender.c	/^main() {$/;"	f
+main	pipe-reader.c	/^main()$/;"	f
+main	pipe-writer.c	/^main() {$/;"	f
+main	pointer-dreaded-pointer-test.c	/^main(int argc, char *argv[])$/;"	f
+main	pointers-to-function-test.c	/^main(int argc, char *argv[])$/;"	f
+main	process-bar.c	/^int main(int argc, char *argv[])$/;"	f
+main	pthread-test.c	/^main(int argc, char *argv[]) {$/;"	f
+main	puts-test.c	/^int main() {$/;"	f
+main	semaphore-test.c	/^main()$/;"	f
+main	shift-test.c	/^main() {$/;"	f
+main	signal-lib.c	/^int main()$/;"	f
+main	simple-web-server.c	/^int main(int argc, char *argv[]) {$/;"	f
+main	size-of-file.c	/^int main(int argc, char *argv[])$/;"	f
+main	string-p.c	/^int main(int argc, char *argv[])$/;"	f
+main	string-utils.c	/^int main()$/;"	f
+main	structure-test.c	/^main() {$/;"	f
+main	swap.c	/^int main(int argc, char *argv[])$/;"	f
+main	thread-condition.c	/^int main(int argc, char *argv[])$/;"	f
+main	thread-demo.c	/^int main(int argc, char *argv[])$/;"	f
+main	thread-mutex.c	/^int main (int argc, char *argv[])$/;"	f
+main	timeb-test.c	/^main() {$/;"	f
+main	xor.c	/^int main() {$/;"	f
+main_a	pthread-test.c	/^main_a() {$/;"	f
+main_b	pthread-test.c	/^main_b() {$/;"	f
+main_c	pthread-test.c	/^main_c() {$/;"	f
+main_d	pthread-test.c	/^main_d() {$/;"	f
+match	string-p.c	/^char *match(char *str, char *want)$/;"	f
+max	inputmonitor-kernel.c	/^	int max;$/;"	m	struct:query_mode	file:
+maxval	inputmonitor-kernel.c	/^static const int maxval[EV_MAX + 1] = {$/;"	v	file:
+meaning_of_life	call-back-test.c	/^int meaning_of_life(void) {$/;"	f
+mediatype	simple-web-server.c	/^        char *mediatype;$/;"	m	struct:__anon4	file:
+memchr_test	string-utils.c	/^int memchr_test()$/;"	f
+memcmp_test	string-utils.c	/^int memcmp_test()$/;"	f
+memcpy_test	string-utils.c	/^int memcpy_test()$/;"	f
+memmove_test	string-utils.c	/^int memmove_test()$/;"	f
+memset_test	string-utils.c	/^int memset_test()$/;"	f
+message	pthread-test.c	/^        char *message;$/;"	m	struct:_thread_data	file:
+message_buf	msg-recv-test.c	/^} message_buf;$/;"	t	typeref:struct:msgbuf	file:
+misc	inputmonitor-kernel.c	/^static const char * const misc[MSC_MAX + 1] = {$/;"	v	file:
+msg_buf	msg-send-test.c	/^} msg_buf;$/;"	t	typeref:struct:msgbuf	file:
+msgbody	call-back-test.c	/^                char msgbody[32];$/;"	m	struct:_MyMsg	file:
+msgbuf	msg-recv-test.c	/^typedef struct msgbuf {$/;"	s	file:
+msgbuf	msg-send-test.c	/^typedef struct msgbuf {$/;"	s	file:
+msgst	msgReceive.c	/^struct msgst {$/;"	s	file:
+msgst	msgSender.c	/^struct msgst {$/;"	s	file:
+msgtext	msgReceive.c	/^        char msgtext[2048];$/;"	m	struct:msgst	file:
+msgtext	msgSender.c	/^        char msgtext[2048];$/;"	m	struct:msgst	file:
+msgtype	msgReceive.c	/^        long msgtype;$/;"	m	struct:msgst	file:
+msgtype	msgSender.c	/^        long msgtype;$/;"	m	struct:msgst	file:
+mtext	msg-recv-test.c	/^        char    mtext[MSGSZ];$/;"	m	struct:msgbuf	file:
+mtext	msg-send-test.c	/^        char mtext[MSGSZ];$/;"	m	struct:msgbuf	file:
+mtype	msg-recv-test.c	/^        long    mtype;$/;"	m	struct:msgbuf	file:
+mtype	msg-send-test.c	/^        long mtype;$/;"	m	struct:msgbuf	file:
+mutexsum	pthread-test.c	/^pthread_mutex_t mutexsum;$/;"	v
+mutexsum	thread-mutex.c	/^pthread_mutex_t mutexsum;$/;"	v
+my_handler	signal-lib.c	/^void my_handler(int param)$/;"	f
+myfunc	call-back-test.c	/^void myfunc(MyMsg *msg)$/;"	f
+name	cpp/structure-test.cpp	/^        char *name;$/;"	m	struct:__anon1	file:
+name	dict.c	/^        char *name; \/* defined name *\/$/;"	m	struct:nlist	file:
+name	inputmonitor-kernel.c	/^	const char *name;$/;"	m	struct:query_mode	file:
+name	string-utils.c	/^        char name[40];$/;"	m	struct:__anon5	file:
+name	structure-test.c	/^        char *name;$/;"	m	struct:__anon6	file:
+names	inputmonitor-kernel.c	/^static const char * const * const names[EV_MAX + 1] = {$/;"	v	file:
+next	cpp/class-test.h	/^        int next;$/;"	m	class:Stash
+next	dict.c	/^        struct nlist *next; \/* next entry in chain *\/$/;"	m	struct:nlist	typeref:struct:nlist::nlist	file:
+nlist	dict.c	/^struct nlist { \/* table entry: *\/$/;"	s	file:
+operator +	cpp/operator-overloading-test.cpp	/^        operator+(const Integer& rv) const {$/;"	f	class:Integer
+operator +=	cpp/operator-overloading-test.cpp	/^        operator+=(const Integer& rv) {$/;"	f	class:Integer
+over_nine_thousand	call-back-test.c	/^int over_nine_thousand(void) {$/;"	f
+person	string-utils.c	/^} person, person_copy;$/;"	v	typeref:struct:__anon5
+person_copy	string-utils.c	/^} person, person_copy;$/;"	v	typeref:struct:__anon5
+pop	cpp/template-test.cpp	/^void Stack<T>::pop()$/;"	f	class:Stack
+printHello	pthread-test.c	/^printHello(void *threadid) {$/;"	f
+print_absdata	inputmonitor-kernel.c	/^static void print_absdata(int fd, int axis)$/;"	f	file:
+print_device_info	inputmonitor-kernel.c	/^static int print_device_info(int fd)$/;"	f	file:
+print_events	inputmonitor-kernel.c	/^static int print_events(int fd)$/;"	f	file:
+print_hello	thread-demo.c	/^void *print_hello(void *threadid)$/;"	f
+print_repdata	inputmonitor-kernel.c	/^static void print_repdata(int fd)$/;"	f	file:
+print_two_numbers	call-back-test.c	/^void print_two_numbers(int (*number_source) (void)) {$/;"	f
+println	cpp/class-test.cpp	/^void A::println() {$/;"	f	class:A
+println	cpp/class-test.cpp	/^void X::println() {$/;"	f	class:X
+println	cpp/class-test.cpp	/^void Y::println() {$/;"	f	class:Y
+printlnn	cpp/class-test.cpp	/^void printlnn(X& x) {$/;"	f
+printsize	cpp/class-test.cpp	/^void Tree::printsize() {$/;"	f	class:Tree
+product	pointers-to-function-test.c	/^product(int a, int b)$/;"	f
+propname	inputmonitor-kernel.c	/^static inline const char* propname(unsigned int prop)$/;"	f	file:
+props	inputmonitor-kernel.c	/^static const char * const props[INPUT_PROP_MAX + 1] = {$/;"	v	file:
+push	cpp/template-test.cpp	/^void Stack<T>::push(T const& elem)$/;"	f	class:Stack
+quantity	cpp/class-test.h	/^        int quantity;$/;"	m	class:Stash
+query_device	inputmonitor-kernel.c	/^static int query_device(const char *device, const struct query_mode *query_mode, int keycode)$/;"	f	file:
+query_mode	inputmonitor-kernel.c	/^static const struct query_mode {$/;"	s	file:
+query_modes	inputmonitor-kernel.c	/^} query_modes[] = {$/;"	v	typeref:struct:query_mode	file:
+recv_new	simple-web-server.c	/^int recv_new(int fd, char *buffer) {$/;"	f
+relatives	inputmonitor-kernel.c	/^static const char * const relatives[REL_MAX + 1] = {$/;"	v	file:
+repeats	inputmonitor-kernel.c	/^static const char * const repeats[REP_MAX + 1] = {$/;"	v	file:
+reverse_order	pointers-to-function-test.c	/^reverse_order(int a, int b)$/;"	f
+reverse_string	swap.c	/^void reverse_string(char *str)$/;"	f
+rq	inputmonitor-kernel.c	/^	int rq;$/;"	m	struct:query_mode	file:
+sayHello	pthread-test.c	/^sayHello(void *threadargs) {$/;"	f
+scan_devices	inputmonitor-kernel.c	/^static char* scan_devices(void)$/;"	f	file:
+send_new	simple-web-server.c	/^void send_new(int fd, char *msg) {$/;"	f
+sex	cpp/structure-test.cpp	/^        char *sex;$/;"	m	struct:__anon2	file:
+sex	structure-test.c	/^        char *sex;$/;"	m	struct:__anon7	file:
+signaled	signal-lib.c	/^sig_atomic_t signaled = 0;$/;"	v
+size	cpp/class-test.h	/^        int size;$/;"	m	class:Stash
+somefunc	pointers-to-function-test.c	/^typedef int (*somefunc)(int, int);$/;"	t	file:
+sorted_order	pointers-to-function-test.c	/^sorted_order(int a, int b)$/;"	f
+sounds	inputmonitor-kernel.c	/^static const char * const sounds[SND_MAX + 1] = {$/;"	v	file:
+storage	cpp/class-test.h	/^        unsigned char* storage;$/;"	m	class:Stash
+strange_order	pointers-to-function-test.c	/^strange_order(int a, int b)$/;"	f
+strcat_test	string-utils.c	/^int strcat_test()$/;"	f
+strchr_test	string-utils.c	/^int strchr_test()$/;"	f
+strcmp_test	string-utils.c	/^int strcmp_test()$/;"	f
+strcpy_test	string-utils.c	/^int strcpy_test()$/;"	f
+strcspn_test	string-utils.c	/^int strcspn_test()$/;"	f
+strdup	dict.c	/^char *strdup(char *s) \/* make a duplicate of s *\/$/;"	f
+strlen	string-p.c	/^int strlen(char *str)$/;"	f
+strlen_test	string-utils.c	/^strlen_test()$/;"	f
+sum	pthread-test.c	/^        double sum;$/;"	m	struct:__anon3	file:
+sum	pthread-test.c	/^        int sum;$/;"	m	struct:_thread_data	file:
+sum	thread-mutex.c	/^        double     sum; $/;"	m	struct:__anon8	file:
+swap	inline-func-test.c	/^swap(int m, int n)$/;"	f
+swap_int	swap.c	/^void swap_int(int *x, int *y)$/;"	f
+switches	inputmonitor-kernel.c	/^static const char * const switches[SW_MAX + 1] = {$/;"	v	file:
+syns	inputmonitor-kernel.c	/^static const char * const syns[SYN_MAX + 1] = {$/;"	v	file:
+test	embedded-python.py	/^def test():$/;"	f
+test_bit	inputmonitor-kernel.c	/^#define test_bit(/;"	d	file:
+test_grab	inputmonitor-kernel.c	/^static int test_grab(int fd)$/;"	f	file:
+test_sorting	pointers-to-function-test.c	/^test_sorting(int *numbers, int count, compare_cb cmp)$/;"	f
+thread_data	pthread-test.c	/^} thread_data;$/;"	t	typeref:struct:_thread_data	file:
+thread_data_array	pthread-test.c	/^thread_data thread_data_array[NUM_THREADS];$/;"	v
+thread_id	pthread-test.c	/^        int thread_id;$/;"	m	struct:_thread_data	file:
+thread_ids	thread-condition.c	/^int thread_ids[3] = {0, 1, 2};$/;"	v
+threadfunc	semaphore-test.c	/^void threadfunc()$/;"	f
+top	cpp/template-test.cpp	/^T Stack<T>::top () const$/;"	f	class:Stack
+typename	inputmonitor-kernel.c	/^static inline const char* typename(unsigned int type)$/;"	f	file:
+usage	inputmonitor-kernel.c	/^static int usage(void)$/;"	f	file:
+var	extern-foo-test.c	/^int var;$/;"	v
+veclen	pthread-test.c	/^        int veclen;$/;"	m	struct:__anon3	file:
+veclen	thread-mutex.c	/^        int     veclen; $/;"	m	struct:__anon8	file:
+version	inputmonitor-kernel.c	/^static int version(void)$/;"	f	file:
+watch_count	thread-condition.c	/^void *watch_count(void *t)$/;"	f
+webroot	simple-web-server.c	/^char* webroot() {$/;"	f
+~Animal	cpp/virtual-test.cpp	/^        virtual ~Animal() {}$/;"	f	class:Animal
+~Stash	cpp/class-test.cpp	/^Stash::~Stash() {$/;"	f	class:Stash
+~Tree	cpp/class-test.cpp	/^Tree::~Tree() {$/;"	f	class:Tree
+~Treea	cpp/class-test.cpp	/^Treea::~Treea() {$/;"	f	class:Treea
+~X	cpp/class-test.cpp	/^X::~X() {$/;"	f	class:X
+~Y	cpp/class-test.cpp	/^Y::~Y() {$/;"	f	class:Y
