@@ -4,7 +4,7 @@
 #include <sys/timeb.h>
 #include <sys/time.h>
 
-long
+long double
 get_current_time_ms()
 {
         struct timeval tv;
@@ -20,6 +20,6 @@ main() {
         printf("time: %hu\n", ftm.millitm);
         ftime(&ftm);
         printf("time: %hu\n", ftm.millitm);
-        printf("%ld\n", get_current_time_ms());
+        printf("%.3Lf\n", get_current_time_ms() / 1000);
         return 0;
 }
