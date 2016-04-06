@@ -17,6 +17,7 @@ get_current_time_ms()
 int
 main() {
         struct timeb ftm;
+        get_current_time_ms();
         ftime(&ftm);
         //printf("time: %hu\n", ftm.millitm);
         ftime(&ftm);
