@@ -24,11 +24,18 @@ main(int argc, char *argv[])
 
         memset(&name, 0, sizeof(struct sockaddr_un));
 
+        /* Create local socket */
+        connection_socket = socket(AF_UNIX, SOCK_SEQPACKET, 0);
+        if (connection_socket == -1) {
+                perror("socket");
+                exit(EXIT_FAILURE);
+        }
+
         /* Bind socket to sokcet name */
         name.sun_family = AF_UNIX;
         strncpy(name.sun_path, SOCKET_NAME, sizeof(name.sun_path) - 1);
 
-        ret = bind(connection_socket, (const struct socketaddr *) &name,
+        ret = bind(connection_socket, (const struct sockaddr *) &name,
                    sizeof(struct sockaddr_un));
         if (ret == -1) {
                 perror("bind");
