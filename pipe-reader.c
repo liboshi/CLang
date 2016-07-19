@@ -11,24 +11,26 @@ main()
 {
         int i = 2;
         int fd;
+        int timeout = 10 * 1000 * 1000;
         char *myfifo = "/tmp/myfifo";
         struct stat sb;
 
         /* open, read, and display the message from the FIFO */
-        printf("%d\n", stat(myfifo, &sb));
         if (stat(myfifo, &sb) == -1) {
                 perror("stat");
                 return -1;
         }
-        while (i) {
+        while (timeout) {
                 fd = open(myfifo, O_RDONLY);
                 char buf[MAX_BUF];
-                read(fd, buf, MAX_BUF);
-                if (strlen(buf) > 0) {
-                        printf("Received: %s\n", buf);
-                        close(fd);
+                if (read(fd, buf, MAX_BUF) > -1) {
+                        if (strlen(buf) > 0) {
+                                printf("Received: %s\n", buf);
+                                close(fd);
+                        }
                 }
-                usleep(3000);
+                usleep(500);
+                timeout -= 500;
         }
 
         return 0;
