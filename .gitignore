@@ -4,3 +4,4 @@
 *.o
 *.obj
 *.log
+*.ycm_extra_conf.py
