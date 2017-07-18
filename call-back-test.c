@@ -14,12 +14,12 @@ int meaning_of_life(void) {
         return 29;
 }
 
-typedef struct _MyMsg {
+typedef struct _my_msg {
                 int appId;
                 char msgbody[32];
-} MyMsg;
+} my_msg;
 
-int myfunc(MyMsg *msg)
+int myfunc(my_msg *msg)
 {
         if (strlen(msg->msgbody) > 0 )
                 printf("App Id = %d \nMsg = %s \n",msg->appId, msg->msgbody);
@@ -28,14 +28,14 @@ int myfunc(MyMsg *msg)
         return 0;
 }
 
-typedef int (* callback)(MyMsg *);
+typedef int (* callback)(my_msg *);
 
 int main(void)
 {
         print_two_numbers(&over_nine_thousand);
         print_two_numbers(&meaning_of_life);
 
-        MyMsg msg1;
+        my_msg msg1;
         msg1.appId = 100;
         strcpy(msg1.msgbody, "This is a test\n");
 
