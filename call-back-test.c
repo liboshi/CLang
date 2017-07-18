@@ -19,19 +19,19 @@ typedef struct _MyMsg {
                 char msgbody[32];
 } MyMsg;
 
-void myfunc(MyMsg *msg)
+int myfunc(MyMsg *msg)
 {
         if (strlen(msg->msgbody) > 0 )
                 printf("App Id = %d \nMsg = %s \n",msg->appId, msg->msgbody);
         else
                 printf("App Id = %d \nMsg = No Msg\n",msg->appId);
+        return 0;
 }
 
-void (*callback)(MyMsg *);
+typedef int (* callback)(MyMsg *);
 
 int main(void)
 {
-        print_two_numbers(&rand);
         print_two_numbers(&over_nine_thousand);
         print_two_numbers(&meaning_of_life);
 
@@ -39,9 +39,9 @@ int main(void)
         msg1.appId = 100;
         strcpy(msg1.msgbody, "This is a test\n");
 
-        callback = myfunc;
+        callback mycallback = &myfunc;
 
-        callback(&msg1);
+        mycallback(&msg1);
 
         return 0;
 }
