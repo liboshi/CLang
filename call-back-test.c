@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <string.h>
 
+#define OSHIFN_API
+
 void print_two_numbers(int (*number_source) (void)) {
         printf("%d add %d\n", number_source(), number_source());
 }
@@ -28,7 +30,7 @@ int myfunc(my_msg *msg)
         return 0;
 }
 
-typedef int (* callback)(my_msg *);
+typedef int (OSHIFN_API *callback)(my_msg *);
 
 int main(void)
 {
