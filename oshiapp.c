@@ -46,16 +46,18 @@ main()
 {
         OshiIntfVer intfVer;
         OshiIntfV01 g_intf;
+        OshiIntfV01 *g_intfv01;
         void *hinstlib = NULL;
         hinstlib = load_library(OSHI_LIB);
         if (hinstlib != NULL) {
                 OSHIFN_Start oshi_start = (OSHIFN_Start)get_proc_address(hinstlib, "OSHI_Start");
                 if (oshi_start) {
-                        oshi_start(&g_intf);
+                        oshi_start((OshiIntf)&g_intf);
                 }
         }
-        g_intf.sayHello("Boush");
-        g_intf.sayGoodbye("Boush");
+        g_intfv01 = &g_intf;
+        g_intfv01->sayHello("Boush");
+        g_intfv01->sayGoodbye("Boush");
         free_library(hinstlib);
         return 0;
 }
