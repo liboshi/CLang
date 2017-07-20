@@ -30,7 +30,14 @@ int myfunc(my_msg *msg)
         return 0;
 }
 
+int foo(int age)
+{
+        printf("my age is %d\n", age);
+        return 0;
+}
+
 typedef int (OSHIFN_API *callback)(my_msg *);
+typedef int (OSHIFN_API *callback1)(int);
 
 int main(void)
 {
@@ -39,11 +46,13 @@ int main(void)
 
         my_msg msg1;
         msg1.appId = 100;
-        strcpy(msg1.msgbody, "This is a test\n");
+        strcpy(msg1.msgbody, "This is a test");
 
         callback mycallback = &myfunc;
+        callback1 mycallback1 = &foo;
 
         mycallback(&msg1);
+        mycallback1(25);
 
         return 0;
 }
