@@ -1,10 +1,10 @@
 # C Makefile
-app: string-utils.o
-	cc -o test.out string-utils.o
+app: oshilib.o
+	gcc -shared -o liboshi.so oshilib.o
 
-string-utils.o: string-utils.c
-	cc -c string-utils.c
+oshilib.o: oshilib.c
+	gcc -c -Wall -Werror -fpic oshilib.c
 
 clean:
-	rm -f test.out
+	rm -f liboshi.so
 	rm -f *.o

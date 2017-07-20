@@ -1,14 +1,22 @@
 #ifndef _OSHI_H
 #define _OSHI_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #ifdef DllExport
 #undef DllExport
 #endif
 
 #ifdef WIN32
-#define DllExport extern "C" __declspec(dllexport)
+#define DllExport __declspec(dllexport)
 #else
-#define DllExport extern "C" __attribute__ ((visibility ("default")))
+#define DllExport __attribute__ ((visibility ("default")))
+#endif
+
+#ifdef __cplusplus
+}
 #endif
 
 typedef unsigned short uint16;
