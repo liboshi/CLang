@@ -45,6 +45,9 @@ typedef void
 typedef void
 (*OSHIFN_GetIntf)(OshiIntf intf);
 
+typedef void
+(*OSHIFN_Start)(OshiIntf intf);
+
 #define OSHI_INTF_V01             \
     OshiIntfVer       version;    \
     OSHIFN_SayHello   sayHello;   \
