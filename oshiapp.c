@@ -4,7 +4,7 @@
 
 #include "oshi.h"
 
-#define OSHI_LIB "/root/github/clang/liboshi.so"
+#define OSHI_LIB "/home/boshil/github/clang/liboshi.so"
 
 void* load_library(const char *path);
 void* get_proc_address(void *handle, const char *symbol);
@@ -48,6 +48,9 @@ main()
         OshiIntfV01 g_intf;
         OshiIntfV01 *g_intfv01;
         void *hinstlib = NULL;
+
+        g_intf.version.major = 0;
+        g_intf.version.minor = 1;
         hinstlib = load_library(OSHI_LIB);
         if (hinstlib != NULL) {
                 OSHIFN_Start oshi_start = (OSHIFN_Start)get_proc_address(hinstlib, "OSHI_Start");

@@ -7,7 +7,7 @@ OSHILIB_GetIntf(OshiIntf intf)
         OshiIntfV01 *intfCurr = (OshiIntfV01 *)intf;
         // Add some checker here
         //      such as: interface version and etc.
-        if (intfCurr->version.major == 0 && 
+        if (intfCurr->version.major == 0 &&
             intfCurr->version.minor == 1) {
                 printf("Version is correct.\n");
         }
