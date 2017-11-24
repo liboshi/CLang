@@ -65,9 +65,6 @@ main(int argc, char *argv[])
                                 exit(EXIT_FAILURE);
                         }
 
-                        /* Ensure buffer is 0-terminated */
-                        buffer[BUFFER_SIZE - 1] = 0;
-
                         /* Handle commands */
                         if (!strncmp(buffer, "DOWN", BUFFER_SIZE)) {
                                 down_flag = 1;
@@ -75,11 +72,14 @@ main(int argc, char *argv[])
                         }
 
                         if (!strncmp(buffer, "END", BUFFER_SIZE)) {
+                                /* Ensure buffer is 0-terminated */
+                                buffer[BUFFER_SIZE - 1] = 0;
                                 break;
                         }
 
                         /* Add received summand. */
                         result += atoi(buffer);
+
                 }
 
                 /* Send result */
